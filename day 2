@@ -1,3 +1,6 @@
+
+tinyurl.com/t10boc
+
 sattelite hop time 500 ms
   remote access door = back door
 
@@ -64,6 +67,46 @@ ________________________________________________________________________________
 cat /dev/null > .ss/known_hosts
 
 ssh -M -S /tmp/T6 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student@127.0.0.1
+
+
+________________________________________________________________________________________________________
+SSH command: 
+ssh -S /tmp/T4 dummy -O cancel -R12345:127.0.0.1:5555
+ssh -S /tmp/T2 dummy -O cancel -L3333:192.168.0.3:2203
+ssh -S /tmp/T4 dummy -O forward -L3333:192.168.0.6:2206
+
+SSH - Using a -R Tunnel
+SSH command: 
+ssh -S /tmp/T4 -p 4444 student@127.0.0.1 -O forward -R192.168.0.4:12345:127.0.0.1:5555
+
+SSH’s Home - Where this ssh instance will be executed
+Calls ssh command binary to execute on the current host
+Multiplex Information - -S accesses the stored socket when we connected to T4. 
+
+Present Connection - Where we are pointing our connection attempt right now
+Port - The specific port listening for an ssh connection. 
+Username - What user do you intend to authenticate as when you land on target? 
+IP - Where are we sending our connection request to right now? 
+
+Future Connection - Where are we going from here?
+Session Options - Adding forwarding to the session
+Tunnel syntax -  My tunnel information to connect me to the next target. Includes direction, tunnel entrance IP, tunnel entrance port, next hop IP, and next hop port. The default IP for a -R tunnel’s entrance is 0.0.0.0 or all interfaces on that target.
+________________________________________________________________________________________
+
+NETCAT
+
+nc will accept connections at a given port (-p) and act as a server when you execute it with the -l (listen) option:
+nc -l -p 1234
+In another terminal window, connect a client to the server with nc:
+nc 127.0.01 1234
+You can now send messages between the two machines with nc.
+
+The first command tells netcat to listen on TCP port number 1234 for incoming connections - you can also see that netcat automatically reads data from the client and that you can send your response to the TCP client just by typing it.
+
+Once again, as the -u option is not used, nc will use the TCP protocol.
+
+traceroute is used for troubleshooting connection and to check median
+
 
 
 
