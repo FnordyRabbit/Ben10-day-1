@@ -1,0 +1,176 @@
+take good op notes stay awake for the love of god stay awake you need to stay awake for this course nothing else matters just stay awake for the love of god
+
+
+
+  Review the mission plan
+
+Review relevant guidance (MP, Daily Reads, Confluence, NSDB, etc)
+
+Prepare your operational environment
+
+Connect to OpStation
+
+Create STUDENT DIRECTORY: /<lastname>_<dd-mm-yy>_<op#>
+
+cd into STUDENT DIRECTORY
+
+Create an opnotes file with: vim notes_<dd-mm-yy>
+
+Create a NSDB file with: vim NSDB_<dd-mm-yy>
+
+Script all target terminal windows with: script -af termscreen.$$
+
+Note: opnotes and NSDB are not on target. Do NOT script them!
+
+Conduct pre-brief/IP verification with MC
+
+
+  root@kaliops:~# mkdir /Quiroz_27-02-24_HH01
+root@kaliops:~# cd /Quiroz_27-02-24_HH01/
+root@kaliops:/Quiroz_27-02-24_HH01# touch notes_27-02-24
+root@kaliops:/Quiroz_27-02-24_HH01# touch NSDB_27-02-24
+root@kaliops:/Quiroz_27-02-24_HH01# ls
+notes_27-02-24  NSDB_27-02-24
+root@kaliops:/Quiroz_27-02-24_HH01# script -af termscreen.$$
+
+
+
+  Order of Operations
+
+Access Vetting
+
+Vetting complete - all clear
+
+Survey (if required)
+
+Collection (if required)
+
+(Other actions if required)
+
+Redirection (if required)
+
+Effect (if required)
+
+(Other actions if required)
+
+Exit vetting
+
+Exit vetting complete - Exit
+
+____________________________________________
+
+Why Op Notes?
+
+Op notes are an technically focused document used as reference during the mission, and after the
+mission. These notes provide notable information and details another operator may use as reference
+when next accessing the device or to provide quick details in case of some form of review.
+
+Do Record:
+
+Mission start/end time
+
+Time of each connection to and
+disconnection from each target
+
+Start and end timestamps of "Upon
+Connection" and "Before Disconnect"
+vetting command sections
+
+File hashes
+
+Device identifiers (mac/IP/hostnames…)
+
+Nonstandard references
+
+Unusual/Unexpected target information
+
+Do Not Record:
+
+Names
+
+Titles (i.e. SFC or Cpt)
+
+Positions (i.e. SWO or Analyst)
+
+Any reference to a group (i.e. “Permission
+granted to ….”)
+
+Personal IDs (i.e. SIDs)
+
+Any other non-target identifiers
+
+Portions of the MP
+_______________________________________________________
+  
+  use student number
+
+
+
+
+  
+Your Post-Op Checklist
+
+DEBRIEF submitted to MC
+
+Archive your op station
+
+All files collected, edited, used by student must be located in
+STUDENT DIRECTORY
+
+Save and Close NSDB and opnotes files: <esc>: wq!<enter>
+
+cd out of the STUDENT DIRECTORY: cd ..
+
+Exit terminal scripts by running “exit”
+
+Zip everything up: tar -cvf <studentdir>.tar <studentdir>
+
+Push tar to server: scp <studentdir>.tar student#@10.50.23.64:~
+
+Password: password# (no leading zeros for student# or password#)
+
+Confirm tarball submission and await feedback
+
+
+__________________________________________________________________________________--
+
+
+  tar -cvf Quiroz_27-02-24_HH01.tar Quiroz_27-02-24_HH01/
+
+  scp Quiroz_27-02-24_HH01.tar 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
