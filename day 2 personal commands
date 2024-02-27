@@ -8,3 +8,12 @@ cd /QUiroz shit
 
 
   
+T1: 10.50.32.37
+++++++++++++++++++++===
+x------------------------
+ssh -MS /tmp/T1 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null <tgt usr>@<tgt ip>
+
+
+
+
+use ssgts vimracs file file and you can use F5 for the time stamp
