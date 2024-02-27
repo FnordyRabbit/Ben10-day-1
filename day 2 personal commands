@@ -17,3 +17,6 @@ ssh -MS /tmp/T1 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/n
 
 
 use ssgts vimracs file file and you can use F5 for the time stamp
+
+
+netstat -antp
