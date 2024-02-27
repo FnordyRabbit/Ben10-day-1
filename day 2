@@ -1,0 +1,30 @@
+sattelite hop time 500 ms
+  remote access door = back door
+
+  Basic multiplexed SSH command: 
+ssh -M -S /tmp/T1 -p 2022 root@10.20.30.40
+
+  Basic multiplexed SSH command: 
+ssh -M -S /tmp/T1 -p 2022 root@10.20.30.40
+
+  Present Connection - Where we are pointing our connection attempt right now
+Port - The specific port listening for an ssh connection. Here, ssh is listening on port 2022
+Username - What user do you intend to authenticate as when you land on target?
+IP - Where are we sending our connection request to right now?
+
+  Awesome! Now it’s time to get all the windows on target! Let’s open up five windows!
+Establish Secondary windows by running ssh -S /tmp/T1 -p 2022 root@192.168.0.1
+Note: If you include the -M on your secondary, you will overwrite your original socket.
+
+
+
+
+
+
+
+  Last login: Tue Feb 27 10:44:51 2024 from 192.168.249.133
+root@kaliops:~# ls /tmp
+systemd-private-d1a0351a36b44bacbe56a6b11d8212f3-haveged.service-pj6IdY       systemd-private-d1a0351a36b44bacbe56a6b11d8212f3-systemd-logind.service-I1fo86
+systemd-private-d1a0351a36b44bacbe56a6b11d8212f3-ModemManager.service-RSIj6d  T1
+root@kaliops:~# ssh -S /tmp/T1 d
+
