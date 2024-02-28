@@ -1,0 +1,46 @@
+Linux
+
+Upon Connection:
+ls -latr /
+ls -latr /tmp
+ls -latr .
+ls -latr ..
+sudo ls -latr /root   !!!!!!!!!!!SUDO COMMAND!!!!!!!!!!!!
+ps -elf
+ifconfig -a OR ip addr
+netstat -auntp OR ss -auntp
+w
+ sudo ls -latr /var/spool/cron   !!!!!!!!!!SUDO COMMAND!!!!!!!!
+
+    sudo tail -n 1000 <files in /var/spool/cron/>  !!!!!!!!!!!!SUDO COMMAND!!!!!!!!!!!!!!!!!!
+
+    date; date -u
+    uname -a
+    df
+    ls -latr /var/*/*acc*
+    ls -latr /var/*log*/
+    sudo ls -latr /var/log/*    !!!!!!SUDO COMMAND!!!!!!!!!!!!!
+
+    cat out relevant files (grep for your logged in user account)
+
+    ls -la /etc/*syslog* read all the config files
+    for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+    cat /etc/crontab
+    ls -la /etc/cron.*
+
+    As needed, examine the files/scripts shown in the directory listing of the cron.* directories
+
+    find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<duration in minutes since initial connection> -type f -print0 | xargs -0 ls -latr (NOTE there is a "-" a.k.a minus symbol preceding the "<duration in minutes since initial connection">
+    sestatus OR getenforce
+    cat /root/.bash_history
+    cat ~/.bash_history
+
+Before Disconnect:
+
+    w
+    ls -latr /tmp
+    ps -elf
+    netstat -lptn
+    ls -latr /var/log
+    find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<yourminutesontarget> -type f -print0 | xargs -0 ls -latr
+
