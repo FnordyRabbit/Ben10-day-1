@@ -24,15 +24,17 @@ w
     cat out relevant files (grep for your logged in user account)
 
     ls -la /etc/*syslog* read all the config files
+cat /etc/*syslog*/<logname>
     for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
     cat /etc/crontab
     ls -la /etc/cron.*
 
     As needed, examine the files/scripts shown in the directory listing of the cron.* directories
 
-    find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<duration in minutes since initial connection> -type f -print0 | xargs -0 ls -latr (NOTE there is a "-" a.k.a minus symbol preceding the "<duration in minutes since initial connection">
+    find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<duration in minutes since initial connection> -type f -print0 | xargs -0 ls -latr 
+    ^^^^^^(NOTE there is a "-" a.k.a minus symbol preceding the "<duration in minutes since initial connection">
     sestatus OR getenforce
-    cat /root/.bash_history
+    sudo cat /root/.bash_history !!!!!!!!!!!!!!!!!SUDO COMMAND!!!!!!!!!!!!!!!!!
     cat ~/.bash_history
 
 Before Disconnect:
