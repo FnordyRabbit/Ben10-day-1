@@ -56,3 +56,7 @@ wise words of MAC "YOU NEED PUSSY NOT BUSSY"
 
 for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
 basic ping sweep to find hosts
+
+I honestly dont know what this one does
+Helpful find command for between two times
+find . -newermt '2019-05-28 23:00' -not -newermt '2019-05-29 23:00'
