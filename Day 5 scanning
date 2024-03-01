@@ -25,3 +25,31 @@ nmap <ip> -p U:53,111,T:21-25
 NC / netcat
 
 echo "test text" 
+
+
+snmp-check -h 
+snmp-check 127.0.0.1 -c public > snmp_test
+
+rpcinfo -p [target]
+
+ssh -O forward -D 9050 proxychains
+
+
+===========================================================
+!!!scanning second tgt after already being hooked to T1!!!!!!!!!!!!!!!!!!!!!
+
+gunny A scanning
+
+does stealth ssh without key logging
+ping -c 2 tgt 
+tracepath tgt
+ssh -s /tmp/T1 authgarbage -O forward -d -9050
+netstat -natup | grep 9050
+proxychains nmap -Pn -n -vvv -T3 -sS -p T:1-1000 tgt
+proxychains nmap -Pn -n -vvv -T3 -sS -p T:22,111,22022,80,443,445,3389 tgt
+ssh -s /tmp/T1 authgarbage -D cancel -D 9050
+
+ Im an administrator so I see it literally all the time, and I never see anyone get in trouble because it’s hard as hell for your chain of command to prove you don’t love someone lol. 
+But my two best friends who did are long out but still married to eachother because they are both too lazy to do the paperwork, both have girls and one even has a kid. 
+wise words of MAC "YOU NEED PUSSY NOT BUSSY"
+
