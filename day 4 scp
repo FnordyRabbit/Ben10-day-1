@@ -1,0 +1,56 @@
+scp - copies files between hosts on a network. It uses ssh for data transfer, and uses the same authentication and provides the same security as ssh. Unlike rcp, scp will ask for passwords or passphrases if they are needed for authentication.
+scp {source} {Destination}
+Upload:
+scp [/path/to/local/]<file> <user>@<remote_IP>:~/.
+Download
+scp <user>@<remote_ip>:[/path/to/remote]<file> [/path/to/local/file]
+How would you utilize previously established ssh connections to do this?
+
+===============================================================================
+
+
+ssh-cat  - utilizing ssh’s capability to execute a remote command and basic file redirection
+
+Download
+ssh <user>@<Remote_IP> "cat <file>" > <file>
+Upload
+ssh <user>@<Remote_IP> "cat > <file>" < <file>
+
+How would you utilize previously established ssh connections to do this?
+
+  ==================================================================
+
+Cat the file you want on the local or remote host
+Copy the text
+Open vi/vim on the receiving target
+Paste the text in
+Save the file.
+
+  ============================================================
+
+  
+Cat the file you want on the local or remote host
+Copy the text
+Open vi/vim on the receiving target
+Paste the text in
+Save the file.
+
+==================================================
+
+
+To determine the size of the files before we collect them, we can use the du command.  For directories with lots of files this will calculate the disk usage so that we will know if it will break the collection threshold.
+du </dir>
+Summarize disk usage of each FILE, recursively for directories.
+-s      display only a total for each argument
+-S     don’t include subdirectories
+
+
+This command will be useful for your debrief summary as well.
+
+  ==================================================
+
+
+
+
+
+
