@@ -52,4 +52,7 @@ ssh -s /tmp/T1 authgarbage -D cancel -D 9050
  Im an administrator so I see it literally all the time, and I never see anyone get in trouble because it’s hard as hell for your chain of command to prove you don’t love someone lol. 
 But my two best friends who did are long out but still married to eachother because they are both too lazy to do the paperwork, both have girls and one even has a kid. 
 wise words of MAC "YOU NEED PUSSY NOT BUSSY"
+=================================================================
 
+for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
+basic ping sweep to find hosts
