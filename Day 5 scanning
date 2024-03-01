@@ -1,0 +1,27 @@
+enumeration
+scanning a bos gives us foresight into a the box, th epotential operationg system, programs 
+
+never scan all 65535 ports on a machine it will raise red flags and it will also fucking take forever, slows the network down and also will get logged
+
+use man pages and google for nmap when it comes to syntax, if you still do not understand then ask the instructor (trouble shoot first)
+
+nmap -A -T3 --min-rate 10000 -vvvv 10.50.30.212
+
+
+nmap -v -sT -Pn -T3 -sV <ip>   (gunny mac's review btw) (basic scan for ssh, http, etc
+nefore jumping to discovered box
+
+
+nmap <ip> -p U:53,111,T:21-25
+
+-sS: SYN stealth scan
+-sT: TCP connect scan
+-sU: UDP scan
+-Z: Port scanning mode i.e zero I/O mode
+-v: be verbose [use twice -vv to be more verbose]
+-n: Use numeric-only IP addredded i.e 
+==========================================================
+
+NC / netcat
+
+echo "test text" 
