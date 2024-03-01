@@ -11,3 +11,8 @@ configuring ip, nat and mangle tables again
   sudo iptables -t nat -A PREROUTING -p tcp --dport 22022 -j DNAT --to-destination <ip>:sshport
   sudo iptables -t nat -L
   sudo iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --tp-source <tgt>
+
+
+
+infosec twitter.
+make randome twitter
