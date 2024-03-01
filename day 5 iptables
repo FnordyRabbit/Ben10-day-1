@@ -1,0 +1,13 @@
+configuring ip, nat and mangle tables again
+
+  lsmod can be used to see what mods are loaded
+
+  iptable s
+  ====================================================
+
+  lmsod
+
+  sudo iptables -t nat -L
+  sudo iptables -t nat -A PREROUTING -p tcp --dport 22022 -j DNAT --to-destination <ip>
+  sudo iptables -t nat -L
+  sudo iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --tp-source <tgt>
