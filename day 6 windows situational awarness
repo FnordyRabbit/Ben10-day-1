@@ -166,7 +166,48 @@ please!
 
   !!!!!!!!!!!!!!!!!!!!!!!!!!POWERSHELL BY DEFAULT LOGS EVERYTHING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!TRY TO AVOID USING IF POSSIBLE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WMIC CAN TYPICALLY GET YOU WHAT YOU NEED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!ASK GUNNY GOOGLE FOR HELP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!USE MULTIPLE COMMNANDS IN WINDOWS DONT RELY ON JUST ONE!!!!!!!!!!!!!!!!!!
 
+==================================================================
+
+Logging
+
+It is likely, almost guaranteed, you have logged on the device
+in some way. When assessing risk to the mission, an operator
+needs to be aware of what logs are being generated and what
+kind of “footprint” they will potentially leave behind.
+
+Most of the known risk will be evaluated, mitigated, and/or
+assumed beforehand. Unfortunately, you cannot plan for
+everything, so as an operator you must be able to make
+assessments and report the risk appropriately.
+
+Logging will be covered in greater detail later
+
+==============================================================
+
+Fun Surprises
+
+Unfortunately, you will make some kind of change to the device, whether
+it is known or unknown is important for operations. As we previously
+mentioned, logs will update and MACs will change however, there are
+other changes you must be aware of. Such changes may include, and are
+not limited to:
+
+Creating files
+
+Modifying system configurations
+
+Firewall rules
+
+Stopping or starting services
+
+Not addressing the risk could potentially lead to an admin, or even worse
+another actor, discovering and compromising your position and activity!
+
+============================================================
 
   
   
