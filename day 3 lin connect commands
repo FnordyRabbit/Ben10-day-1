@@ -1,4 +1,5 @@
 Linux
+!!!!!!use the file command before you cat out files!!!!!!!!!!!!
 
 Upon Connection:
 ls -latr /
