@@ -1,0 +1,172 @@
+MAIN THINGS TO BE CONCERNED ABOUT
+
+
+Logged in Privileged Users
+
+Malware
+
+Logging (kind of)
+
+Security Products
+
+System resource usage
+
+===============================================
+
+  date and time
+
+  date /t
+
+  time /t 
+
+  DO NOT RUN EITHER COMMANDS BY THEMSELVES WITHOUT THE OPTION
+
+  ================================================
+
+System Information
+  
+  Windows provides the “systeminfo” command providing a lot of
+relevant system enumeration information. The following information,
+and more, can be gained from the command:
+
+Device name
+
+OS version
+
+CPU and architecture
+
+System uptime
+
+Installed RAM and usage
+
+NIC information
+
+To check the load on the cpu/processor:
+
+wmic cpu get loadpercentage
+
+===============================================
+
+DISK USAGE
+
+To check disk information on a Windows system:
+
+wmic logicaldisk get name (displays local drives)
+
+To display available space, simply use dir on the drive and it
+will list the available space at the bottom of the results
+
+dir c:\
+
+Why does available space matter? becuase you dont want to blow up the hardrive if its already incredibly strained for memory
+
+  ============================================
+
+  MACHINE IDENTIFICATION
+
+  ipconfig /all
+-
+displays the status of the currently active interfaces
+
+hostname -
+display the system's hostname, not the domain name
+
+echo %userdomain% - displays the current domain name
+
+Systeminfo - already discussed
+
+======================================================
+
+  PROCESSES
+
+tasklist [options]
+
+=====================================================
+
+ OPEN PORTS/CONNECTIONS 
+
+To view a list of listening ports and open connections, you can use the netstat
+command:
+
+Netstat [options]
+
+/a - Displays all active TCP connections and the TCP and UDP ports on
+which the computer is listening
+
+/b - Displays the executable involved in creating each connection or listening
+port. (requires elevated permissions)
+
+/n - Displays active TCP connections, however, addresses and port numbers
+are expressed numerically and no attempt is made to determine names.
+
+/o - Displays active TCP connections and includes the process ID (PID) for
+each connection.
+
+  ===================================================
+
+  Files
+
+It is important to know your surroundings relative to your current position. When
+we enter a Windows system, we are placed into a file structure known as a
+directory. (By default, the ‘home’ directory of the user you are logging in as.) In
+order to better understand the files and the file structure itself, certain
+commands are utilized:
+
+dir <file>List information about file(s)
+
+dir
+Briefly list directory contents
+
+cd
+Change Directory
+
+type
+Concatenate and print (display) the content of files
+
+more
+Display output one screen at a time
+
+strings
+Output the strings of printable characters in a file (if installed)
+
+findstr
+Search file(s) for lines that match a given pattern
+
+  ============================================================
+
+  
+  registrys 
+  main registrys to be worried about are hlcu hlcm
+  =======================================================
+  doskey commands are reportable
+
+
+  =============================================================
+
+VERY useful information present here that is not available via cmd.exe
+
+Powershell can also get the information but it can cause lots of logs on the latest versions
+
+REQUIRES the “Windows Management Instrumentation” or “Winmgmt” service to be
+running
+
+This service is set to “Auto” or “2” meaning that if you invoke it then you will cause the service to
+start!
+
+Question: How would you check to see if this was already running?
+
+Invoked via the “wmic” command
+
+Extensive help menu with many sub-menus
+
+Can acquire more information about the computer faster and easier
+
+Process list with ParentProcessIDs, ExecutablePaths, CommandLine arguments and more? Yes
+please!
+
+  !!!!!!!!!!!!!!!!!!!!!!!!!!POWERSHELL BY DEFAULT LOGS EVERYTHING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!TRY TO AVOID USING IF POSSIBLE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+  
+  
