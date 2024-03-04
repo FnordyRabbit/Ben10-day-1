@@ -1,0 +1,30 @@
+T1 master socket 
+iptables
+use the prouting rules one at a time
+sudo iptables -t nat -A PREROUTING -p tcp --dport <Localmachineport> -j DNAT --to-destination <next target machine>:tgtsshport
+
+postrouting is handled by instructors !DO NOT TOUCH!!!!!!!!!!!!!!!
+
+to check for ip forwarding sysctl iptables -t nat 
+sysctl net.ipv4.ip_forward ## if 0 then enable
+systcl -w net.ipv4.ip_forward=1
+
+T1 make MS referencing port to T1 authing to T1 (reffrenced port is the one in preouting to T2)
+
+
+pre 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
