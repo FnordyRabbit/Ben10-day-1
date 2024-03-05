@@ -1,0 +1,38 @@
+Read Mission in its entirety
+
+open terms, one for blue side on the right side of screen and then 
+amount needed for red side on left hand sign
+
+on blue side create dir
+mkdir quiroz_<D>-<M>-<Y>_HH0#
+
+create notes and NSDB
+touch notes_<d>-<m>-<y>
+touch NSDB_<d>-<m>-<y>
+
+Enter the quiroz directory on all terminals (run initially on blue term)
+script -af termscreen.$$
+
+Vim notes on blue term and use the Lmon_opnotes_template.txt
+fill in all required information from the mission plan ENSURE that all information
+is correct and that there is no descrepencies even within the mission plan
+
+review guidelines
+
+request an MC and Analyst
+
+mission may have started by now
+
+connect to your first target using ssh masquerading 
+ssh -MS /tmp/T1 -p <tgtssh> -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null <tgt usr>@<tgt ip>
+
+timestamp let your MC know and log in your notes along with declaring connected and vetting
+
+depending on the client device, begin upon connection commands located in your github 
+or if worst comes to worse in the guidelines. On this step make sure you are paying close 
+attention but still being fast, look for users, malware, remote/abnormal logging, security products 
+and such. Log them using the proper format inside the mission guidelines
+
+after proper connection to T1 you can target to T2 utilizing the previous master socke you have created,
+ssh -S /tmp/T1 d -O forward -L 127.0.0.1:<Lport>:<tgtip>:<Rport>
+ssh -M -S /tmp/T2 -p <lportfromlastcommand> -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null <creds>@127.0.0.1
