@@ -1,0 +1,5 @@
+query user
+  net user
+  net groups
+  tasklist
+  netstat
