@@ -1,1 +1,33 @@
+Windows
 
+Upon Connection:
+
+    date /t
+    time /t
+    query user
+    tasklist /V
+    auditpol /get /category:*
+    ipconfig /all
+    netstat /anob
+    netsh advfirewall show allprofiles
+    net share
+    reg query hklm\software\microsoft\windows\currentversion\run
+    reg query hklm\software\microsoft\windows\currentversion\runonce
+    reg query hklm\software
+    schtasks /query /v
+    dir /o:d /t:w c:\
+    dir /o:d /t:w c:\windows\temp
+    dir /o:d /t:w c:\windows\
+    dir /o:d /t:w c:\windows\system32
+    dir /o:d /t:w c:\windows\system32\winevt\logs
+    dir /o:d /t:w "%appdata%\microsoft\windows\start menu\programs\startup"
+    wevtutil qe security /c:25 /rd:true /f:text (whatever has updated from previous dir)
+
+Before Disconnect
+
+    dir /o:d /t:w c:\windows\temp
+    dir /o:d /t:w c:\windows\system32\winevt\logs
+    wevtutil qe security /c:25 /rd:true /f:text (whatever has updated from previous dir)
+    netstat /anob
+    query user
+    tasklist /V
