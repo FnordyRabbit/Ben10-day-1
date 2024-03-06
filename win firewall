@@ -1,0 +1,105 @@
+One of three profiles is activated automatically for each network interface:
+
+Public assumes that the network is shared with the World and is the most restrictive profile.
+
+Private assumes that the network is isolated from the Internet and allows more
+inbound connections than public. A network is never assumed to be private unless 
+designated as such by a local administrator.
+
+Domain profile is the least restrictive. It allows more inbound connections to 
+allow for file sharing etc. The domain profile is selected automatically when connected
+to a network with a domain trusted by the local computer.
+
+=================================================================================================
+
+Security log capabilities are included, which can record IP addresses and other data relating to c
+onnections originating from the home or office network or the Internet. It can record both dropped packets 
+and successful connections. This can be used, for instance, to track every time a computer on the network
+connects to a website. This security log is not enabled by default; the administrator must enable it.
+
+Windows Firewall can be controlled/configured through a COM object-oriented API, scriptable through the
+netsh command, through the GUI administration tool or centrally through group policies. All features are 
+available regardless of how it is configured. 
+
+==================================================================================================
+
+netsh Overview
+
+Netsh is a command-line scripting utility that allows you to, either locally or remotely,
+display or modify the network configuration of a computer that is currently running. 
+Netsh also provides a scripting feature that allows you to run a group of commands in batch
+mode against a specified computer. Netsh can also save a configuration script in a text file
+for archival purposes or to help you configure other servers.
+
+Syntax
+netsh [-a AliasFile] [-c Context] [-r RemoteComputer] [{NetshCommand|-f ScriptFile}]
+
+We will mainly be working with the Contexts interface and advfirewall.
+
+==================================================================================================
+
+netsh interface
+
+Common Commands:
+netsh interface show interface	- Display all network interfaces
+
+ip Commands:
+netsh interface ip show address	- Display IP Address; DHCP;Subnet; Gateway
+netsh interface ip show dns		- Display DNS information on network interface
+
+portproxy (Tunneling) Commands:
+netsh interface portproxy show all
+netsh interface portproxy add v4tov4 listenport=12345 listenaddress=192.168.0.221 connectport=54321 
+connectaddress=192.168.0.98 protocol=tcp
+netsh interface portproxy delete v4tov4 listenport=12345 listenaddress=192.168.0.221
+
+==================================================================================================
+
+netsh advfirewall firewall
+
+Common Commands:
+netsh advfirewall show allprofiles  			- See if Windows Firewall is enabled
+netsh advfirewall show currentprofile 			- Show which profiles are active
+netsh advfirewall export "c:\FW.wfw" 			- Create a BACKUP of the configuration
+netsh advfirewall import "c:\FW.wfw"  			- Restore netsh firewall configuration
+
+firewall Commands:
+netsh advfirewall firewall show rule name=all 	- View firewall configuration
+
+=============================================
+
+
+
+
+!!!!!!!!!!!INSTRUCTOR EXAMPLE!!!!!!!!!!!!!!!!
+
+linda :: netsh interface portproxy show all
+
+linda :: netsh interface portproxy add v4tov4 listenport=<LRHP> listenaddress=<LIP> connectport=<tgtssh> connectaddress=<TgtIP> protocol=tcp
+                                                      ^listen to itself
+essentially just an ssh command
+
+
+
+linda :: net interface portproxy show all
+^used to check netsh tunnel is setup
+
+kali ops now
+
+kaliops :: ssh -S /tmp6/T8.ssh -O forward -L 8017:192.168.0.9:8007 dickingmacdown
+this ssh command sends traffic to linda which then sends traffic to the target 
+machine due to the previous netsh command.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
