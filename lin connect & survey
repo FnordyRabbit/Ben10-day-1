@@ -48,3 +48,26 @@ Before Disconnect:
     ls -latr /var/log
     find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<yourminutesontarget> -type f -print0 | xargs -0 ls -latr
 
+=============================================================
+
+SURVEY COMMANDS
+
+Linux
+
+    mount
+    lsmod
+    uname -a
+    ls -latr /etc/*release*
+    cat /etc/*release*
+    cat /proc/cpuinfo
+    services --status-all || systemctl status --no-pager (depending on systemd vs not systemd)
+    cat /proc/meminfo
+    cat /etc/shadow
+    cat /etc/passwd
+    lspci -vv
+    arp -a
+    lsusb
+    lsblk
+    fdisk -l
+    free -m
+    dmidecode -t bios
