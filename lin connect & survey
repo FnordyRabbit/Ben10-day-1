@@ -62,8 +62,8 @@ Linux
     cat /proc/cpuinfo
     services --status-all || systemctl status --no-pager (depending on systemd vs not systemd)
     cat /proc/meminfo
-    cat /etc/shadow
-    cat /etc/passwd
+    sudo cat /etc/shadow
+    sudo cat /etc/passwd
     lspci -vv
     arp -a
     lsusb
