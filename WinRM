@@ -1,0 +1,17 @@
+WinRm or also know as just windows remote management is the microsoft implementation of th eweb services for management
+(WS-Man) protocol
+WS-Man is a protocol based on simple object access protocol (soap) for management
+
+powershell remoting uses windows remoe power managemen (WinRM)
+to allow users to run powershell commands on remote computers. WinRm is the 
+micrososft omplementation of the web services for management (WS-management) protocol
+
+be default, WinRM/Powershell Remoting listenm on
+5985: HTTP
+5986: HTTPS
+
+
+\
+
+Evinl WinRM
+
