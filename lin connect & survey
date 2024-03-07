@@ -71,3 +71,8 @@ Linux
     fdisk -l
     free -m
     dmidecode -t bios
+
+==============================================================
+hashing files within an dir
+
+md5sum dir/*
