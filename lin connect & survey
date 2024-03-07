@@ -71,6 +71,7 @@ Linux
     fdisk -l
     free -m
     dmidecode -t bios
+    cat /etc/hosts
 
 ==============================================================
 hashing files within an dir
