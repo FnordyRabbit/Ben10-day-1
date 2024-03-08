@@ -68,3 +68,6 @@ p[ing sweep does not work on proxychains.
 -sV for service 
 -O for os
 
+preferred scan
+root@kaliops:~/quiroz_07-03-24_HH010# proxychains nmap -Pn -O -n -vvv -T3 -sT -p T:22,23,445,443,111,80,3389 192.168.0.5,9,10,12,13
+
