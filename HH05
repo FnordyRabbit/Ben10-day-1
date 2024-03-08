@@ -1,0 +1,83 @@
+
+
+HAMBURGERHELPER05
+TODAY
+Start Time: ANYTIME
+Duration: 6 hours
+MC: mc1
+Operator: student#
+Analyst: analyst1
+
+Type of Operation: Cyber Intelligence, Surveillance and Reconnaissance (C-ISR)
+
+Objective: Access listed user devices within the Drittes Reich’s internal HYDRA network (192.168.0.1/24) and perform outlined collection on T4-T5. Identify and triage any operational risks encountered during this operation (admins, PSPs, logging, malware, etc) for future operational planning. Enumerate Drittes Reich’s internal stub network (192.168.0.16/28). Provide at a minimum the IP address and OS for all discovered potential targets to the analyst. After IP’s have been identified, scan for potential vulnerable services and open ssh ports and report those as well.
+
+Tools/Techniques: All connections will be established through SSH masquerades or netsh tunnels. Ports in use will be dependent on target location and are subject to change. Secure Copy (scp) is preferred method for file transfers <10MB. All secure hash functions are authorized with the exception of SHA-0 algorithm. All scanning must be conducted through secure tunnels and not run on/from target hosts. Nmap and traceroute command(s) are authorized but unreliable and known to produce false positives. Performing an entire port sweep is unauthorized, all scans must be 1000 ports or less to minimize network traffic.
+
+Credentials: student#::password#  // **administrators documented to frequently implement default creds on internal routers and various other devices to enable incident response outsourcing
+
+Prior Approvals: sudo is authorized ONLY for commands that require it unless otherwise instructed.
+
+Scheme of Maneuver:
+>T1: <Float_IP_of_Box1> / 192.168.0.99
+-> T2: 192.168.0.13
+--> T3: 192.168.0.10
+---> T4: UNK
+---> T5: UNK
+
+Target Section:
+
+T1:
+Hostname: Louise
+IP: <Float_IP_of_Box1> / 192.168.0.99
+OS: CentOS 7
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade, survey, and redirect to T2 - T5.
+
+T2:
+Hostname: Mort
+IP: 192.168.0.13
+OS: Ubuntu 18.04  
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade, survey, and redirect to the next target.
+
+T3:
+Hostname: Gene
+IP: 192.168.0.10
+OS: Debian  
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Access target from T3, survey. Scan the 192.168.0.16/28 network for hosts. Intelligence suggests workstations for PeterParker and WadeWilson are within this range. Report devices. Redirect according to discovered targets with Analyst input.
+
+T4/5:
+Hostname: Bob
+IP: UNK
+OS: CentOS 7  
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade, survey. Collect the contents of root’s home directory. Redirect to next target.
+
+T4/5:
+Hostname: Teddy
+IP: UNK
+OS: Fedora 29
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and survey. Collect a copy of the password and shadow files. Conclude operation.
