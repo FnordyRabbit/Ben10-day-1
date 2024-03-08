@@ -33,7 +33,7 @@ CAT /ETC/HOSTS YOU FOOL
 
     As needed, examine the files/scripts shown in the directory listing of the cron.* directories
 
-    find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<duration in minutes since initial connection> -type f -print0 | xargs -0 ls -latr 
+    sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<duration in minutes since initial connection> -type f -print0 | sudo xargs -0 ls -latr 
     ^^^^^^(NOTE there is a "-" a.k.a minus symbol preceding the "<duration in minutes since initial connection">
     sestatus OR getenforce
     sudo cat /root/.bash_history !!!!!!!!!!!!!!!!!SUDO COMMAND!!!!!!!!!!!!!!!!!
