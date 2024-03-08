@@ -1,0 +1,63 @@
+
+
+HAMBURGERHELPER06
+TODAY
+Start Time: ANYTIME
+Duration: 6 hours
+MC: mc1
+Operator: student#
+Analyst: analyst1
+
+Type of Operation: Cyber Intelligence, Surveillance and Reconnaissance (C-ISR)
+
+Objective: Perform enumeration of listed user devices within the Drittes Reich’s internal HYDRA network (192.168.0.1/24).  Of particular interest, record all user accounts for use in follow-on operations.
+
+Tools/Techniques: All connections will be established through SSH masquerades. Ports in use will be dependent on target location and are subject to change. Connections to devices will be established through IPtables port forwarding (the use of ssh forwards {-O forward, -L, -R} are not authorized). Delete any IPtables rules you have added prior to exiting each target.
+
+Credentials: root::<password_you_set> | administrator::<password_you_set> | student#::password#  // **administrators documented to frequently implement default creds on internal routers and various other devices to enable incident response outsourcing
+
+Prior Approvals: sudo is authorized ONLY for commands that require it unless otherwise instructed.
+
+Scheme of Maneuver:
+>T1: <Float_IP_of_Box1> / 192.168.0.99
+-> T2: 192.168.0.10
+--> T3: 192.168.0.23
+---> T4: 192.168.0.13
+
+Target Section:
+
+T1:
+Hostname: Louise
+IP: <Float_IP_of_Box1> / 192.168.0.99
+OS: Ubuntu 18.04
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Action: Perform SSH masquerade and use iptables to redirect to the next target.
+
+T2:
+Hostname: Gene
+IP: 192.168.0.10
+OS: Debian
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Action: Perform SSH masquerade and use iptables to redirect to the next target.
+
+T3:
+Hostname: Bob
+IP: 192.168.0.23
+OS: CentOS 7
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Action: Perform SSH masquerade and use iptables to redirect to the next target.
+
+T4:
+Hostname: Mort
+IP: 192.168.0.13
+OS: Fedora
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Action: Perform SSH masquerade and conclude operation.
