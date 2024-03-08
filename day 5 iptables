@@ -13,6 +13,8 @@ configuring ip, nat and mangle tables again
   sudo iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --tp-source <tgt>
 
 
+sudo iptables -nvl
+
 
 infosec twitter.
 make randome twitter
