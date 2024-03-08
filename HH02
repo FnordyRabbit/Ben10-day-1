@@ -1,0 +1,100 @@
+
+
+HAMBURGERHELPER02
+TODAY
+Start Time: ANYTIME
+Duration: 6 hours
+MC: mc1
+Operator: student#
+Analyst: analyst1
+
+Type of Operation: Cyber Intelligence, Surveillance and Reconnaissance (C-ISR)
+
+Objective: Tunnel through devices within the Drittes Reich’s internal HYDRA network (192.168.0.1/24) by utilizing SSH control sockets for obfuscation.  
+
+Tools/Techniques: All connections will be established through SSH masquerades. Ports in use will be dependent on target location and are subject to change.
+
+Credentials: student#::password#  // **administrators documented to frequently implement default creds on internal routers and various other devices to enable incident response outsourcing
+
+Prior Approvals: sudo is authorized ONLY for commands that require it unless otherwise instructed.
+
+Scheme of Maneuver:
+>T1: <FLOAT_IP>
+->T2: 192.168.0.13
+--<T3: 192.168.0.9
+->T4: 192.168.0.27
+-->T5: 192.168.0.23
+-->T6: 192.168.0.10
+
+Target Section:
+
+T1 >>External Router<<
+Hostname: Louise
+IP: <FLOAT_IP> / 192.168.0.99
+OS: Linux
+Creds: student#::password#
+Last Known SSH Port: <ssh1>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T2:
+Hostname: Mort
+IP: 192.168.0.13
+OS: Linux
+Creds: student#::password#
+Last Known SSH Port: <ssh1>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade. Use tunnels to redirect the beacon from T3 on port 123## to capture on your opstation on the same port. You will need to establish a netcat listener on your opstation with the following command: nc -nvlp 123##.
+
+
+T3:
+Hostname: Unknown
+IP: 192.168.0.9
+OS: Unknown
+Creds: student#::password#
+Last Known SSH Port: <ssh1>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Receive beacon from T3. You will not go interactive on this target.
+
+
+T4:
+Hostname: Teddy
+IP: 192.168.0.27
+OS: Linux
+Creds: student#::password#
+Last Known SSH Port: <ssh1>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade to verify connectivity and redirect to the next target.
+
+
+T5:
+Hostname: Bob
+IP: 192.168.0.23
+OS: Linux
+Creds: student#::password#
+Last Known SSH Port: <ssh1>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade to verify connectivity.
+
+
+T6:
+Hostname: Gene
+IP: 192.168.0.10
+OS: Linux
+Creds: student#::password#
+Last Known SSH Port: <ssh1>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade to verify connectivity and disconnect from all targets.
