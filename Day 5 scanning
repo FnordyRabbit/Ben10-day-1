@@ -60,3 +60,11 @@ basic ping sweep to find hosts
 I honestly dont know what this one does
 Helpful find command for between two times
 find . -newermt '2019-05-28 23:00' -not -newermt '2019-05-29 23:00'
+
+
+learn how to banner grab with nc and nmap for os 
+learn how to do live host discovery on nmap and nc utilizing proxychains
+p[ing sweep does not work on proxychains.
+-sV for service 
+-O for os
+
