@@ -1,0 +1,82 @@
+
+
+HAMBURGERHELPER08
+TODAY
+Start Time: ANYTIME
+Duration: 6 hours
+MC: mc1
+Operator: student#
+Analyst: analyst1
+
+Type of Operation: Cyber Intelligence, Surveillance and Reconnaissance (C-ISR)
+
+Objective: Enumerate Drittes Reich’s internal HYDRA network (192.168.0.1/24). Enumerate devices and perform indicated collection. Redirect using netsh as indicated.
+
+Tools/Techniques: All connections will be established through SSH masquerades or netsh tunnels. Ports in use will be dependent on target location and are subject to change.
+
+Credentials: student#::password#  // **administrators documented to frequently implement default creds on internal routers and various other devices to enable incident response outsourcing
+
+Prior Approvals: sudo is authorized ONLY for commands that require it unless otherwise instructed. Windows Defender is assumed to be installed and enabled network wide on all Windows devices within Drittes Reich’s internal HYDRA network. MD has blanket approved operating and coexisting with Windows Defender enabled up to v. 10 /8.1 32-bit/64-bit. All netsh rules placed by operators will be removed prior to disconnecting from Windows targets
+
+Scheme of Maneuver:
+>T1: <Float_IP_of_Box1> / 192.168.0.99
+->T2: 192.168.0.12
+-->T3:192.168.0.13
+--->T4:192.168.0.9
+---->T5:192.168.0.10
+
+Target Section:
+
+T1:
+Hostname: Louise
+IP: <Float_IP_of_Box1> / 192.168.0.99
+OS: CentOS 7
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T2:
+Hostname: Tina
+IP: 192.168.0.12
+OS: Windows 7
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade. Perform survey. Collect all files contained in prefetch. Redirect to T3.
+
+
+T3:
+Hostname: Mort
+IP: 192.168.0.13
+OS: Ubuntu 18.04  
+Creds: student#::password#
+Last Known SSH Port: Unknown
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T4:
+Hostname: Linda
+IP: 192.168.0.9
+OS: Windows 10
+Creds: student#::password#
+Last Known SSH Port: Unknown
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade. Perform survey. Collect all .dll files contained in “C:\Program Files\Windows Defender\”. Redirect to T5.
+
+T5:
+Hostname: Gene
+IP: 192.168.0.10
+OS: Debian
+Creds: student#::password#
+Last Known SSH Port: Unknown
+PSP: Unknown
+Action: Perform SSH masquerade. Conclude operation.
