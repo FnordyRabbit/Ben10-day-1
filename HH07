@@ -1,0 +1,81 @@
+
+
+HAMBURGERHELPER07
+TODAY
+Start Time: ANYTIME
+Duration: 6 hours
+MC: mc1
+Operator: student#
+Analyst: analyst1
+
+Type of Operation: Cyber Intelligence, Surveillance and Reconnaissance (C-ISR)
+
+Objective: Access the listed user devices within the Drittes Reich’s internal HYDRA network (192.168.0.1/24) and enumberate devices.
+
+Tools/Techniques: All connections will be established through SSH masquerades and ssh tunnels. Ports in use will be dependent on target location and are subject to change.
+
+Prior Approvals: sudo is authorized ONLY for commands that require it unless otherwise instructed. Windows Defender is assumed to be installed and enabled network wide on all Windows devices within Drittes Reich’s internal HYDRA network. MD has blanket approved operating and coexisting with Windows Defender enabled up to v. 10 /8.1 32-bit/64-bit.
+
+Scheme of Maneuver:
+>T1: <Float_IP_of_Box1> / 192.168.0.99
+-> T2: 192.168.0.27
+--> T3: 192.168.0.13
+---> T4: 192.168.0.9
+----> T5: 192.168.0.12
+
+Target Section:
+
+T1:
+Hostname: Louise
+IP: <Float_IP_of_Box1> / 192.168.0.99
+OS: CentOS 7
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T2:
+Hostname: Teddy
+IP: 192.168.0.27
+OS: Fedora 29
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T3:
+Hostname: Mort
+IP: 192.168.0.13
+OS: Ubuntu 18.04  
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T4:
+Hostname: Linda
+IP: 192.168.0.9
+OS: Windows
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade. Redirect to the next target.
+
+T5:
+Hostname: Tina
+IP: 192.168.0.12
+OS: Windows
+Creds: student#::password#
+Last Known SSH Port: N/A
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Access target through tunnels from T4. Conclude operation.
