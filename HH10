@@ -1,0 +1,102 @@
+
+
+HAMBURGERHELPER10
+2024-03-07
+Start Time: ANYTIME
+Duration: 6 hours
+MC: mc1
+Operator: student#
+Analyst: analyst1
+
+Type of Operation: Cyber Intelligence, Surveillance and Reconnaissance (C-ISR)
+
+Objective: Perform enumeration and collection within the Drittes Reich’s internal HYDRA network (192.168.0.1/24).  Follow guidance for each target. Identify and record all logs operator made on target during operation. On T7, execute T10 effect to delete suspected malicious third-party actor student#+2 account.
+
+Tools/Techniques: All connections will be established through SSH masquerades. Ports in use will be dependent on target location and are subject to change. Tunnels to devices will be established through ssh, IPTables, or netsh as indicated. Delete any IPtables and netsh rules you have added prior to exiting each target.
+
+Credentials: root::<password_you_set> | administrator::<password_you_set> | student#::password#  // **administrators documented to frequently implement default creds on internal routers and various other devices to enable incident response outsourcing.
+
+Prior Approvals: sudo is authorized ONLY for commands that require it unless otherwise instructed. Employment of netsh and iptables rules is authorized on specified targets only and only for the duration of redirection. Ensure rules are deleted once they are no longer needed, and any needed configuration changes (such as enabling forwarding) are undone prior to disconnect. No changes to any existing permissions or user accounts on any target are authorized without MC approval.
+
+Scheme of Maneuver:
+>T1: <Float_IP_of_Box1> / 192.168.0.99
+-> T2: 192.168.0.10
+--> T3: 192.168.0.13
+---> T4: 192.168.0.9
+----> T5: 192.168.0.23
+-----> T6: 192.168.0.12
+------> T7: 192.168.0.27
+
+Target Section:
+
+T1:
+Hostname: Louise
+IP: <Float_IP_of_Box1> / 192.168.0.99
+OS: CentOS 7
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Action: Perform SSH masquerade, and scan the network to determine the operating system of each live host. Then redirect to the next target using ssh tunnels.
+
+T2:
+Hostname: Gene
+IP: 192.168.0.10
+OS: Debian
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Action: Perform SSH masquerade, perform a device survey, and redirect to the next target using ssh tunnels.
+
+T3:
+Hostname: Mort
+IP: 192.168.0.13
+OS: Ubuntu 18.04
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade, survey, collect /etc/passwd, /etc/shadow, and /etc/group, and redirect to the next target using ssh tunnels. Catch the callback beacon from T4 on port 123## and report it to the analyst. Then configure tunnels to access T4 via ssh.
+
+T4:
+Hostname: Linda
+IP: 192.168.0.9
+OS: Windows 10
+Creds: Unknown
+Last Known SSH Port: Unknown
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade, perform an analyst survey, and collect all .dll files from C:\Program Files\Common Files\system\ado\, then redirect to the next target using netsh rules.
+
+T5:
+Hostname: Bob
+IP: 192.168.0.23
+OS: CentOS 7
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Action: Perform SSH masquerade, collect the /etc/shadow and /etc/passwd files and redirect to the next target via IPTables rules.
+
+T6:
+Hostname: Tina
+IP: 192.168.0.12
+OS: Windows 7
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade, enumerate users, and use prefetch files to identify applications previously run on the target. Record results in your opnotes. Redirect to the next target using netsh tunnels.
+
+
+T7:
+Hostname: Teddy
+IP: 192.168.0.27
+OS: Fedora 29
+Creds: student#::password#
+Last Known SSH Port: <ssh port you chose>
+PSP: Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and survey. Execute T10 effect and delete user account student#+2 as outlined in Prior Approvals section. Conclude operation.
