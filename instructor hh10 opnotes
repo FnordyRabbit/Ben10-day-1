@@ -1,0 +1,21 @@
+request MC and Annalyst for the day
+review guidelines and nsdb
+verify tgt ips with MC
+
+
+communicate every deletion and modification, EVERY ONE
+
+
+
+1) Did not review or skimmed dailt read - cloud-init can be ignored
+2) Did not ask for permission to add IP to MP before T3 connect
+3) Did not report security prodcut on T4
+4) Device survey was not complete for analyst
+5) did not traverse through T5-T7 due to time
+6) Naming convetion wrong for Tarball
+7) missing SElinux log lines
+😎 missing quiet a few vetting commands
+9) missing sruveys due to not surveying
+10) did not timestamp exit vetting survey
+11) NSDB documentation located in opnotes - unauthorized verbage
+
