@@ -1,3 +1,6 @@
+GET THROUGH THE BOXES FASTER YOU TAKE TOO LONG
+
+
 Read Mission in its entirety, daily reads, NSDB and guidelines 
 
 open terms, one for blue side on the right side of screen and then 
@@ -38,6 +41,8 @@ check to see which logs you have affected and notate them
 send survey and ifconfigs results to analyst
 verify new ips and creds / ports with analyst
 request permmision to then add the new Ips to the MP and what targets
+
+make sure to report logs affected by your user to mc when disconnecting
 
 after proper connection to T1 you can target to T2 utilizing the previous master socke you have created,
 ssh -S /tmp/T1 d -O forward -L 127.0.0.1:<Lport>:<tgtip>:<Rport>
