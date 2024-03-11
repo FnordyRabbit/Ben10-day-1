@@ -33,6 +33,8 @@ or if worst comes to worse in the guidelines. On this step make sure you are pay
 attention but still being fast, look for users, malware, remote/abnormal logging, security products 
 and such. Log them using the proper format inside the mission guidelines
 
+check to see which logs you have affected and notate them
+
 after proper connection to T1 you can target to T2 utilizing the previous master socke you have created,
 ssh -S /tmp/T1 d -O forward -L 127.0.0.1:<Lport>:<tgtip>:<Rport>
 ssh -M -S /tmp/T2 -p <lportfromlastcommand> -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null <creds>@127.0.0.1
