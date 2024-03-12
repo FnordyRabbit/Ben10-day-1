@@ -7,7 +7,7 @@ ls -latr /tmp
 ls -latr .
 ls -latr ..
 sudo ls -latr /root   !!!!!!!!!!!SUDO COMMAND!!!!!!!!!!!!
-ps -elf
+ps -elfH
 ifconfig -a OR ip addr
 netstat -auntp OR ss -auntp
 w
