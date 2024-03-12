@@ -70,7 +70,7 @@ Linux
     lsblk
     fdisk -l
     free -m
-    dmidecode -t bios
+   sudo dmidecode -t bios
     cat /etc/hosts
 
 ==============================================================
