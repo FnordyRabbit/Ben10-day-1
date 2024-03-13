@@ -77,3 +77,5 @@ Linux
 hashing files within an dir
 
 md5sum dir/*
+
+sha1 <filename>
