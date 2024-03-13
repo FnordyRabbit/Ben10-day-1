@@ -68,7 +68,7 @@ Linux
     arp -a
     lsusb
     lsblk
-    fdisk -l
+    sudo fdisk -l
     free -m
    sudo dmidecode -t bios
     cat /etc/hosts
