@@ -38,9 +38,18 @@ and such. Log them using the proper format inside the mission guidelines
 
 check to see which logs you have affected and notate them
 
+should be 4 vetting time stamps
+entry vetting
+entry vetting complete
+exit vetting
+exit vetting complete
+
 send survey and ifconfigs results to analyst
 verify new ips and creds / ports with analyst
 request permmision to then add the new Ips to the MP and what targets
+if you dont have time to do analyst tasks or etc, let them know
+ask your analyst for what files they want collected
+tell your analyst when you do analyst actions
 
 make sure to report logs affected by your user to mc when disconnecting
 
