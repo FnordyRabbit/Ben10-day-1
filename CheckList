@@ -60,5 +60,5 @@ wtmp
 
 
 after proper connection to T1 you can target to T2 utilizing the previous master socke you have created,
-ssh -S /tmp/T1 d -O forward -L 127.0.0.1:<Lport>:<tgtip>:<Rport>
-ssh -M -S /tmp/T2 -p <lportfromlastcommand> -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null <creds>@127.0.0.1
+ssh -S /tmp/T<prevt> d -O forward -L 127.0.0.1:<Lport>:<tgtip>:<Rport>
+ssh -M -S /tmp/T<tnum> -p <lportfromlastcommand> -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null <creds>@127.0.0.1
