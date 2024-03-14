@@ -1,0 +1,1 @@
+netsh interface portproxy add v4tov4 listenport=<portgiven> listenaddress=<localtgtip> connectport=<tgtpt> connectaddress=<nexttgt> protocol=tcp
