@@ -1,0 +1,10 @@
+multiple line command, one pass prompt and the folling prompt you use EOF
+           rodgers file collect linux to linux (need sudo to view file) after command is run, 
+ssh -S /tmp/T# \| sudo --prompt="" -S -- cat <file> > <dir coppied to or name of file if already in dir> << EOF 
+1st prompt :: gator boy with cursor is asking for password
+2nd prompt :: EOF
+
+
+ssh -S /tmp/T# \| sudo --prompt="" -S -- cat <file> > <where you want file /name> << EOF
+> password11
+> EOF
