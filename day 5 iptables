@@ -31,7 +31,9 @@ second rule for t2 ->3
 third rule for t1 -> t2 -> t3
 
 
-
+in case shit hits the fan
+sudo iptables -t nat -L PREROUTING --line-numbers
+sudo iptables -t nat -D PREROUTING [last_line_number]
 
 
 
