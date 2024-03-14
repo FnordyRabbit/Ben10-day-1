@@ -1,0 +1,4 @@
+create two survey lists that utilize master socket
+run in kaliops in directory
+
+ssh -S /tmp/T# AUTH "survey command" >> Survey_<ip>
