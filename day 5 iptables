@@ -5,11 +5,42 @@ configuring ip, nat and mangle tables again
   iptable s
   ====================================================
 
-  lmsod
+  lmsod (see if iptables is loaded)
 
+  sudo iptables -t nat -L  (displaying iptables)
+
+
+--dport is local port on tgt machine 
+--to-destination tgtip:tgtssh
+                                            
+  sudo iptables -t nat -A PREROUTING -p tcp --dport <lclpt> -j DNAT --to-destination <ip>:sshport
   sudo iptables -t nat -L
-  sudo iptables -t nat -A PREROUTING -p tcp --dport 22022 -j DNAT --to-destination <ip>:sshport
-  sudo iptables -t nat -L
+
+  sysctl net.ipv4.ip_forward  || or || cat /proct/sys/net/ipv4/ip_forward
+(if neither gives 1 is not router)
+              ||                                                                    (depends on which command worked)
+              ===========================> (if not rtr then) sysctl -w net.ipv4.ip_forward=1 || or || echo 1 > /proct/sys/net/ipv4/ip_forward
+Kaliboxnow# ssh to dport specified
+
+
+can get annoying since you have to mannually create tunnels and mannually tunnels
+
+say you wanna get to T3 but you have to use iptables
+one rule for t1 -> t2  (one sepperate tunnel for T1 to T2 cannot reuse)
+second rule for t2 ->3
+third rule for t1 -> t2 -> t3
+
+
+
+
+
+
+
+
+
+
+
+
   sudo iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --tp-source <tgt>
 
 
