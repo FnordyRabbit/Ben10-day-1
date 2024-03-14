@@ -21,6 +21,8 @@ w
     ls -latr /var/*/*acc*
     ls -latr /var/*log*/              !!!!!!!!!!!NEED TO SUDO IN ORDER TO VIEW!!!!!!!!!!
     sudo ls -latr /var/log/*    !!!!!!SUDO COMMAND!!!!!!!!!!!!!
+    
+!!!!sudo everything in var !!!!
 
     cat out relevant files (grep for your logged in user account)
 
