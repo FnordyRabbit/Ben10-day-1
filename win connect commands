@@ -31,3 +31,23 @@ Before Disconnect
     netstat /anob
     query user
     tasklist /V
+
+================================================
+powershell commmands
+
+get-date
+quser
+
+Get-ChildItem 'C:\'
+Get-ChildItem 'C:\Windows\Temp'
+Get-ChildItem 'C:\Windows\'
+Get-ChildItem 'C:\Windows\System32'
+Get-ChildItem 'C:\Windows\System32\Winevt\Logs'
+Get-ChildItem '
+Get-ChildItem -Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup" | Sort-Object -Property LastWriteTime
+
+
+
+
+
+
