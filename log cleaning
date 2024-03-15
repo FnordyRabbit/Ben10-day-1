@@ -20,8 +20,22 @@ student11 is unique string
 Find your logs:  sudo find /var/log -type f -mmin -120 2&> /dev/null
 
 
-sudo grep -v ‘student11’ /var/log/secure > /tmp/secure.11.clean
+sudo grep -v 'sshd\[2167\]' /var/log/secure > /tmp/secure.11.clean
 grep through cleaned LOG to make sure
 sudo cat /tmp/secure.11.clean > /var/log/secure.11
 sudo touch -t 201504211118.24 /var/log/secure (time equals last entry in log)
-rm -rf /tmp/secure.clean
+sudo rm -rf /tmp/messages.11.clean
+
+holy grail command right here that took me way to long to figure out
+VVV
+sudo grep -Ewv 'Mar 13.*student11' /var/log/messages > /tmp/messages.11.clean
+grep student11 /tmp/secure.11.clean
+
+
+
+
+sudo cat /var/log/secure | sudo grep -Ew 'Mar 13.*student11' | md5sum
+sudo cp /var/log/messages /tmp/messages.11
+
+sudo md5sum /tmp/messages.11.clean
+ls -latr /tmp
