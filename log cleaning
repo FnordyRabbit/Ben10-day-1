@@ -1,0 +1,27 @@
+Confirm your mission’s log cleaning policy
+Identify all of your logs* 
+Disable logging as needed
+Identify a unique string or strings that identify all of your logs and only your logs
+Confirm Actions with Senior
+grep out the log, using -v to remove entries with your unique strings to a temporary file in /tmp
+Verify all offending logs have been removed
+Cat out the contents of your clean log file onto the original log file
+Use ‘touch’ command to update the timestamp to the most recent log entry
+Delete /tmp/ log file
+Restart logging
+
+
+
+
+secure and message
+cant disable logging
+student11 is unique string
+
+Find your logs:  sudo find /var/log -type f -mmin -120 2&> /dev/null
+
+
+sudo grep -v ‘student11’ /var/log/secure > /tmp/secure.11.clean
+grep through cleaned LOG to make sure
+sudo cat /tmp/secure.11.clean > /var/log/secure.11
+sudo touch -t 201504211118.24 /var/log/secure (time equals last entry in log)
+rm -rf /tmp/secure.clean
