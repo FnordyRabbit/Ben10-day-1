@@ -10,9 +10,9 @@ PID -
 
 PPID - 1
 
-User - 
+User - root or rsyslog
 
-Location of config file - 
+Location of config file -  /etc/rsyslog.conf or the d one
 
 Remote IP  - 
 
