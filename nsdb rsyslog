@@ -18,12 +18,7 @@ Remote IP  -
 
 Network connections - port 514
 
-*.*;auth,authpriv.none          -/var/log/syslog
-auth,authpriv.*                 /var/log/auth.log
-kern.*                          -/var/log/kern.log
-mail.*                          -/var/log/mail.log
-mail.err                        /var/log/mail.err
-*.emerg                         :omusrmsg:*
+
 
 
 Documentation - https://www.rsyslog.com/doc/index.html
