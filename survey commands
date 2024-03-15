@@ -28,3 +28,11 @@ ssh -S /tmp/T# AUTH "cat /etc/hosts" >> Survey_<ip>
 
 
 
+
+
+
+WINDOWS SURVEY COMMANDS
+=======================
+
+
+
