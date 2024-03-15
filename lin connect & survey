@@ -48,7 +48,7 @@ Before Disconnect:
     ps -elf
     netstat -lptn
     ls -latr /var/log
-    find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<yourminutesontarget> -type f -print0 | xargs -0 ls -latr
+    sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<yourminutesontarget> -type f -print0 | xargs -0 ls -latr
 
 sudo grep -rl 'student11' /var/log
 
