@@ -32,7 +32,9 @@ nc -nlvp RHP1
 ______________________________________________________________________________________
 
 
+LT HEASER COLLACT COMMAND
 
+ssh -S /tmp/T# D "echo 'password11' | sudo -S fdisk -l" >> Survey_<ip>
 
 
 
