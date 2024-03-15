@@ -13,18 +13,16 @@ ssh -S /tmp/T# AUTH "cat /etc/*release*" >> Survey_<ip>
 ssh -S /tmp/T# AUTH "cat /proc/cpuinfo" >> Survey_<ip>
 ssh -S /tmp/T# AUTH "services --status-all || systemctl status --no-pager" >> Survey_<ip>
 ssh -S /tmp/T# AUTH "cat /proc/meminfo" >> Survey_<ip>
-ssh -S /tmp/T# AUTH "sudo cat /etc/shadow" >> Survey_<ip>
-ssh -S /tmp/T# AUTH "sudo cat /etc/passwd" >> Survey_<ip>
+ssh -S /tmp/T# D "echo 'password11' | sudo -S cat /etc/shadow" >> Survey_<ip>
+ssh -S /tmp/T# D "echo 'password11' | sudo -S cat /etc/passwd" >> Survey_<ip>
 ssh -S /tmp/T# AUTH "lspci -vv" >> Survey_<ip>
 ssh -S /tmp/T# AUTH "arp -a" >> Survey_<ip>
 ssh -S /tmp/T# AUTH "lsub" >> Survey_<ip>
 ssh -S /tmp/T# AUTH "lsblk" >> Survey_<ip>
-ssh -S /tmp/T# AUTH "sudo fdisk -l" >> Survey_<ip>
+ssh -S /tmp/T# D "echo 'password11' | sudo -S fdisk -l" >> Survey_<ip>
+ssh -S /tmp/T# D "echo 'password11' | sudo -S dmidecode -t bios" >> Survey_<ip>
 ssh -S /tmp/T# AUTH "free -m" >> Survey_<ip>
-ssh -S /tmp/T# AUTH "sudo dmidecode -t bios" >> Survey_<ip>
 ssh -S /tmp/T# AUTH "cat /etc/hosts" >> Survey_<ip>
-
-
 
 
 
