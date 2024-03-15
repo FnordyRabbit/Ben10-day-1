@@ -83,3 +83,5 @@ hashing files within an dir
 md5sum dir/*
 
 sha1 <filename>
+
+sudo ls -latr /proc/<pid>                (interchangeable with lsof
