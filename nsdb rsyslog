@@ -1,0 +1,35 @@
+*****Abnormal Logging Report*****
+
+Time Found -
+
+Target: 
+
+Name - rsyslog
+
+PID - 
+
+PPID - 1
+
+User - 
+
+Location of config file - 
+
+Remote IP  - 
+
+Network connections - port 514
+
+*.*;auth,authpriv.none          -/var/log/syslog
+auth,authpriv.*                 /var/log/auth.log
+kern.*                          -/var/log/kern.log
+mail.*                          -/var/log/mail.log
+mail.err                        /var/log/mail.err
+*.emerg                         :omusrmsg:*
+
+
+Documentation - https://www.rsyslog.com/doc/index.html
+
+Description - remote logging, sending logs to the remote host  on port 514
+
+Recommendation - put box on hold cant clean logs since they are being sent to another machine
+
+*****End of Report*****
