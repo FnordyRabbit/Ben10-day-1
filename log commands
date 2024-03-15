@@ -1,0 +1,139 @@
+
+
+exit
+
+Operator: Cpl Quiroz
+
+Operation: DR01
+
+MC: MC1
+
+Analyst: analyst1
+
+Description: Traveresed through the 10.45.117./24 to get to the 192.168.117./24 network.
+Did device surveys on the internal network.
+determined potential for follow on opperation value.
+T1 was the External Router to the network, only had remote logging and selinux in permissive.
+T2 is a server with remote logging and selinux enforced.
+T3 was the internal router, scanned from this device to find the ssh ports for the internal network.
+T4 had malware on it leading me to suspect poor security and the box. it also had a lot of logs.
+T5 had a admin acoun logged on locally using wireshark, one of the admins boxes.
+T6 did not reach.
+T7 did not reach.
+
+
+Result: Fail
+Too many point deductions
+-did not access T6,T7
+No T4,T5 analyst objectives
+No wireshark report (separate report required)
+T1 disconnect time missing from opnotes
+
+
+
+
+
+
+
+
+
+
+Operator: Cpl Quiroz Isaiah J
+
+Operation: DR04
+
+MC: MC1
+
+Analyst: analyst1
+
+Description: Goal of the operation was to collect files of interests. Mission was a failure, missed malware and did not hit every target. Operator traversed through 3 networks.
+Admin was logged into the T2 running a logging software. T1 was the external router for the 10.145.117./24. T2 was a windows server that we had to use evil winrm to get into and redirected using netsh.
+T3 was the internal router in to the 192.169.117./24 network. T4 conducted a device survey and pulled files of interest for analyst. T5 conducted a device survey, pulled files of interest for analyst, redirected using iptables.
+T6 was supposed to be surveyed but ran out of time, had files of interest on it. T7 did not touch.
+
+
+sudo cat /etc/centOS.rtr.conf | grep student11
+sudo cat /var/lib/dhclient/dhclient--eth0.lease | grep student11
+
+ sudo cat /run/systemd/users/1020 | grep student11
+sudo cat /run/systemd/sessions/210 | grep student11
+sudo last -f /var/log/wtmp | grep student11
+sudo cat /var/log/lastlog | grep student11
+ sudo last -f /run/utmp | grep student11
+ sudo cat /var/log/messages | grep student11
+sudo cat /var/lib/chrony/drift | grep student11
+sudo cat /var/log/secure | grep student11
+sudo cat /var/lib/rsyslog/imjournal.state | grep student11
+ sudo cat /var/log/audit/audit.log | grep student11
+sudo cat /home/useraccounts/student3/.bash_history | grep student11
+sudo last -f /run/log/journal/cab9605edaa5484da7c2f02b8fd10762/system.journal | grep student11
+sudo last -f /run/log/journal/cab9605edaa5484da7c2f02b8fd10762/system.journal | grep student11
+sudo last -f /run/log/journal/cab9605edaa5484da7c2f02b8fd10762/system@9b99e65b09644851ab8f02ff0c6c82fd-000000000000e4bd-000613670f3c2474.journal | grep student11
+sudo cat /var/log/cron | grep student11
+sudo ls -lt /var/log/audit/audit.log
+sudo tail -n 5 /var/log/audit/audit.log
+sudo cat /var/account/pacct | grep student11
+sudo cat /run/log/journal/cab9605edaa5484da7c2f02b8fd10762/system.journal
+
+
+
+sudo last -f /run/log/journal/cab9605edaa5484da7c2f02b8fd10762/system.journal | grep student11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+logs affected on each tgt
+
+tgt 1
+affected logs:
+/var/log/audit/audit.log
+/var/log/messages
+/var/log/secure
+/run/log/journal/cab9605edaa5484da7c2f02b8fd10762/system.journal
+/run/utmp
+/var/log/wtmp
+
+T2
+affected logs:
+/var/log/messages
+/var/log/secure
+/var/log/audit/audit.log
+/run/log/journal/cab9605edaa5484da7c2f02b8fd10762/system.journal
+/var/log/wtmp
+/run/utmp
+
+T3
+logs affected :
+/var/log/messages
+/var/log/audit/audit.log
+/var/log/secure
+/var/log/wtmp
+/run/utmp
+
+T4
+affected logs
+/run/utmp
+/var/log/wtmp
+/var/log/secure
+/var/log/messages
+
+T5
+affected logs
+security
+event
+
+
+
+
