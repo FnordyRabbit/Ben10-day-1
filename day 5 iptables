@@ -5,6 +5,7 @@ configuring ip, nat and mangle tables again
   iptable s
   ====================================================
 
+!!!!!TALK TO THE MC ABOUT EVERYTHING!!!!!!!!!!!
   lmsod (see if iptables is loaded)
 
   sudo iptables -t nat -L  (displaying iptables)
