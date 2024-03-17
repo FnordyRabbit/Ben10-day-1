@@ -5,6 +5,7 @@ Upon Connection:
     date /t
     time /t
     query user
+    tasklist /SVC   (does not say who is running)
     tasklist /V
     auditpol /get /category:*
     ipconfig /all
