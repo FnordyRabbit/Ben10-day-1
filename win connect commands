@@ -17,6 +17,7 @@ Upon Connection:
     reg query hklm\software\microsoft\windows\currentversion\runonce
     reg query hklm\software
     schtasks /query /v
+    schtasks /query /v /FO LIST
     dir /o:d /t:w c:\
     dir /o:d /t:w c:\windows\temp
     dir /o:d /t:w c:\windows\
