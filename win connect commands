@@ -12,6 +12,7 @@ Upon Connection:
     netstat /anob
     netsh advfirewall show allprofiles
     net share
+    reg query "hklm\software\microsoft\windows nt\currentversion\winlogon"
     reg query hklm\software\microsoft\windows\currentversion\run
     reg query hklm\software\microsoft\windows\currentversion\runonce
     reg query hklm\software
