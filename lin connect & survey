@@ -25,6 +25,7 @@ w
     ls -latr /var/*/*acc*
     ls -latr /var/*log*/              !!!!!!!!!!!NEED TO SUDO IN ORDER TO VIEW!!!!!!!!!!
     sudo ls -latr /var/log/*    !!!!!!SUDO COMMAND!!!!!!!!!!!!!
+    ps -elfh | grep student23
     
 !!!!sudo everything in var !!!!
 
