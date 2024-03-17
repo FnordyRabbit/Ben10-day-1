@@ -9,7 +9,7 @@ ls -latr ..
 sudo ls -latr /root   !!!!!!!!!!!SUDO COMMAND!!!!!!!!!!!!
 ls -latr /etc
 ls -latr /home
-ps -elfH | grep -v student
+ps -elfH | grep -v student                CAN STILL USE NORMAL PS TO SEE WHAT OTHERS ARE DOING
 ifconfig -a OR ip addr
 netstat -auntp OR ss -auntp    and then | grep -v student
 w
