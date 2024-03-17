@@ -1,0 +1,19 @@
+    systeminfo
+    net user
+    net localgroup
+    net session
+    net start
+    type %systemroot%\system32\drivers\etc\hosts
+    arp -a
+    route print
+    driverquery /v
+    wmic baseboard get Manufacturer, Model, PRoduct, SerialNumber, Version
+    wmic cpu get deviceID, Addresswidth, MaxClockSpeed, Name, Manufacturer
+    wmic logicaldisk get name, freespace, systemname, filesystem, size, volumeserialnumber
+    wmic path Win32_VideoController get caption, CurrentHorizontalResolution, CurrentVerticalResolution, Description, DriverVersion, AdapterRAM /format:list
+    wmic printer list full
+    wmic path win32_pnpentity where "ConfigManagerErrorCode<>0" get Name, PNPDeviceID
+    wmic qfe list full
+    wmic service list full
+    wmic product get Caption, InstallDate, Vendor
+    wmic useraccount where "LocalAccount='TRUE'" get Caption, Disabled, Domain, Lockout, PasswordExpires, SID, Status
