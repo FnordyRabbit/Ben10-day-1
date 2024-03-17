@@ -9,9 +9,9 @@ ls -latr ..
 sudo ls -latr /root   !!!!!!!!!!!SUDO COMMAND!!!!!!!!!!!!
 ls -latr /etc
 ls -latr /home
-ps -elfH
+ps -elfH | grep -v student
 ifconfig -a OR ip addr
-netstat -auntp OR ss -auntp
+netstat -auntp OR ss -auntp    and then | grep -v student
 w
 
  sudo ls -latr /var/spool/cron   !!!!!!!!!!SUDO COMMAND!!!!!!!!
