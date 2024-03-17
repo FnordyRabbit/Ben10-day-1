@@ -2,6 +2,10 @@ Linux
 !!!!!!use the file command before you cat out files!!!!!!!!!!!!
 
 Upon Connection:
+w
+uname -a
+netstat -auntp OR ss -auntp    and then | grep -v student
+ifconfig -a OR ip addr
 ls -latr /
 ls -latr /tmp
 ls -latr .
@@ -10,16 +14,14 @@ sudo ls -latr /root   !!!!!!!!!!!SUDO COMMAND!!!!!!!!!!!!
 ls -latr /etc
 ls -latr /home
 ps -elfH | grep -v student                CAN STILL USE NORMAL PS TO SEE WHAT OTHERS ARE DOING
-ifconfig -a OR ip addr
-netstat -auntp OR ss -auntp    and then | grep -v student
-w
+
+
 
  sudo ls -latr /var/spool/cron   !!!!!!!!!!SUDO COMMAND!!!!!!!!
 
     sudo tail -n 1000 <files in /var/spool/cron/>  !!!!!!!!!!!!SUDO COMMAND!!!!!!!!!!!!!!!!!!
 
     date; date -u
-    uname -a
     df
     free -m
     ls -latr /var/*/*acc*
