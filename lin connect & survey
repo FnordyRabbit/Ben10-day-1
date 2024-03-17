@@ -7,10 +7,13 @@ ls -latr /tmp
 ls -latr .
 ls -latr ..
 sudo ls -latr /root   !!!!!!!!!!!SUDO COMMAND!!!!!!!!!!!!
+ls -latr /etc
+ls -latr /home
 ps -elfH
 ifconfig -a OR ip addr
 netstat -auntp OR ss -auntp
 w
+
  sudo ls -latr /var/spool/cron   !!!!!!!!!!SUDO COMMAND!!!!!!!!
 
     sudo tail -n 1000 <files in /var/spool/cron/>  !!!!!!!!!!!!SUDO COMMAND!!!!!!!!!!!!!!!!!!
