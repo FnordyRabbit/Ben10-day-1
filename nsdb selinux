@@ -17,16 +17,6 @@ last 5 -
 can be configured to be cloud based
 
 
-[student11@dryruns-admin2 ~]$ ls -latr /etc/selinux
-total 20
-drwxr-xr-x.  2 root root    6 Oct 30  2018 tmp
--rw-r--r--.  1 root root 2321 Oct 30  2018 semanage.conf
-drwxr-xr-x.  5 root root   81 Apr 22  2020 .
--rw-r--r--.  1 root root  542 Apr 22  2020 config
-drwxr-xr-x.  7 root root  215 Mar  5 18:49 targeted
-drwx------.  2 root root    6 Mar  5 18:49 final
-drwxr-xr-x. 77 root root 8192 Mar  5 18:49 ..
-
 
 (NIX) Config file - /etc/selinux/config
 
