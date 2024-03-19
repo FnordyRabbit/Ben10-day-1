@@ -16,4 +16,4 @@ scp -o ControlPath=/tmp/T# -P <ssh_Port> <user>@remote_ip:[/path/to/remote]<file
 
 WHATEVER THE FUCK HAPPENED HAPPENED THIS IS HOW IT WORKED
 
-scp -o ControlPath=/tmp/T2 -P 1102 student11@127.0.0.1:"C:/Users/Administrator/Desktop/thesecredsshouldwork.config" ~/student11_13-03-24_DR03
+scp -o ControlPath=/tmp/T# -P <port> <user>@127.0.0.1:"C:/Users/Administrator/Desktop/thesecredsshouldwork.config" ~/student11_13-03-24_DR03
