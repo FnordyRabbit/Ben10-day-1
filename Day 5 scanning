@@ -69,7 +69,7 @@ p[ing sweep does not work on proxychains.
 -O for os
 
 preferred scan
-root@kaliops:~/quiroz_07-03-24_HH010# proxychains nmap -Pn -O -n -vvv -T3 -sT -p T:22,23,445,443,111,80,3389 192.168.0.5,9,10,12,13
+ proxychains nmap -Pn -O -n -vvv -T3 -sT -p T:22,23,445,443,111,80,3389 192.168.0.5,9,10,12,13
 
 proxychains nc -zvn <ip> 1-1024 > <ip> 2>&1
 proxychains nc -zvn 192.168.0.12  22 23 443 445 3389 111 80 > NC_scan1  2>&1
