@@ -7,6 +7,6 @@ netsh interface portproxy delete v4tov4 listenport=12345 listenaddress=192.168.0
 
 
 
-ssh -S /tmp/T1 d -O forward -L 127.0.0.1:1103:10.145.117.10:31011
+ssh -S /tmp/T<totgtwithnetsh> d -O forward -L 127.0.0.1:<newlclpt>:<netship>:<listenportfrom netsh>
 
 ssh -M -S /tmp/T3 -p 1103 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student11@127.0.0.1
