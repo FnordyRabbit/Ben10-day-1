@@ -1,0 +1,26 @@
+*****Security Product Report*****
+Time found - 
+
+Target: 
+
+Name - Lynis
+
+Version - 
+
+can be configured to be cloud based
+
+(NIX) Config file - /etc/lynis/default.prf
+
+associated log - /var/log/lynis.log
+
+timestamp of log - 
+
+last 5 of log - 
+
+associated files - 
+
+Documentation - https://cisofy.com/lynis/
+
+Recommendation - continue with mission
+
+*****End of Report*****
