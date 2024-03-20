@@ -1,0 +1,28 @@
+*****Security Product Report*****
+Time found - 
+
+Target: 
+
+Name - firejail / firetools (both use eachother, firetools is the gui interface for firejail)
+
+Version - 
+
+not cloud based
+
+logs to syslog when there are blacklist violations
+
+timestamp of log - could not find a specific syslog for firetools
+
+last 5 of log - could not find a specific log for firetools
+
+
+(NIX) Config file - /firetools/configure
+
+Documentation - http://firejail.wordpress.com
+
+Recommendation - continue mission
+
+associated logs - 
+
+
+*****End of Report*****
