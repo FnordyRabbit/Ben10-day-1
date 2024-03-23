@@ -38,6 +38,9 @@ cat /etc/*syslog*/<logname>
     for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
     cat /etc/crontab
     ls -la /etc/cron.*
+    cat /etc/cron.hourly/*
+    cat /etc/cron.daily/*
+    cat /etc/cron.weekly/*
     cat /etc/hosts
 
     As needed, examine the files/scripts shown in the directory listing of the cron.* directories
