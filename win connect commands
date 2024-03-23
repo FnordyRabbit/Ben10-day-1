@@ -7,7 +7,7 @@ Upon Connection:
     query user
     tasklist /SVC   (does not say who is running)
     tasklist /V
-    wmic 
+    wmic process get processid,executablepath | findstr <process ID>
     auditpol /get /category:*
     ipconfig /all
     netstat /anob
