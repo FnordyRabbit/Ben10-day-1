@@ -7,6 +7,7 @@ Upon Connection:
     query user
     tasklist /SVC   (does not say who is running)
     tasklist /V
+    wmic 
     auditpol /get /category:*
     ipconfig /all
     netstat /anob
@@ -25,6 +26,8 @@ Upon Connection:
     dir /o:d /t:w c:\windows\system32\winevt\logs
     dir /o:d /t:w "%appdata%\microsoft\windows\start menu\programs\startup"
     wevtutil qe security /c:25 /rd:true /f:text (whatever has updated from previous dir)
+
+helpful tool to check authentics of files https://www.echotrail.io/insights
 
 Before Disconnect
 
