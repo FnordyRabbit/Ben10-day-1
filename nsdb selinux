@@ -6,7 +6,7 @@ Name - SELinux
 
 Version - 31 can be different
 
-mode - 
+mode - enforcing
 
 associated log - /var/log/audit/audit.log
 
