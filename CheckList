@@ -72,4 +72,5 @@ ssh -M -S /tmp/T<tnum> -p <lportfromlastcommand> -o StrictHostKeyChecking=no -o 
 you should create all the tunnel commands and scan command privy to op
 
 
+ssh -S /tmp/T<pivot> -p <associatedmsportfrompivot> student@127.0.0.1 -O forward -R<pivotip>:<givenport>:127.0.0.1:<RHP>
 
