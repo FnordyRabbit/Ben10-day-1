@@ -7,6 +7,7 @@ Upon Connection:
     query user
     tasklist /SVC   (does not say who is running)
     tasklist /V
+    tasklist /v | findstr /i /c:"administrator" /c:"admin"
     wmic process get processid,executablepath | findstr <process ID>
     auditpol /get /category:*
     ipconfig /all
