@@ -14,7 +14,7 @@ sudo ls -latr /root   !!!!!!!!!!!SUDO COMMAND!!!!!!!!!!!!
 ls -latr /etc
 ls -latr /home
 ps -elfH | grep -v student                CAN STILL USE NORMAL PS TO SEE WHAT OTHERS ARE DOING
-
+lsof <process>    !!!!!!!!!!!!!GOOD FOR MALWARE TRIAGE!!!!!!!!!!!!!!!!!
 
 
  sudo ls -latr /var/spool/cron   !!!!!!!!!!SUDO COMMAND!!!!!!!!
