@@ -8,7 +8,7 @@ open terms, one for blue side on the right side of screen and then
 amount needed for red side on left hand sign
 
 on blue side create dir
-mkdir quiroz_<D>-<M>-<Y>_HH0#
+mkdir student#_<D>-<M>-<Y>_<op##>
 
 create notes and NSDB
 touch notes_<d>-<m>-<y>
@@ -77,6 +77,7 @@ ssh -M -S /tmp/T<tnum> -p <lportfromlastcommand> -o StrictHostKeyChecking=no -o 
 
 you should create all the tunnel commands and scan command privy to op
 
+remote ssh:
 
 ssh -S /tmp/T<pivot> -p <associatedmsportfrompivot> student@127.0.0.1 -O forward -R<pivotip>:<givenport>:127.0.0.1:<RHP>
 
