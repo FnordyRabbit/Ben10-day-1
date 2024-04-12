@@ -58,10 +58,16 @@ tell your analyst when you do analyst actions
 
 make sure to report logs affected by your user to mc when disconnecting
 affected logs are normally 
+for linux:
 secure
 messages
 utmp
 wtmp
+lastlog
+
+for windows:
+security
+application
 
 
 after proper connection to T1 you can target to T2 utilizing the previous master socke you have created,
