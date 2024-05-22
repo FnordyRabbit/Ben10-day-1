@@ -6,98 +6,122 @@ Common Ports and Protocols Cheatsheet
 	•	Port: 80
 	•	Alternate Ports: 8080, 8000
 	•	Description: Used for transferring web pages on the internet.
+	
 	2.	HTTPS (Hypertext Transfer Protocol Secure)
 	•	Port: 443
 	•	Alternate Ports: 8443
 	•	Description: Secure version of HTTP using SSL/TLS.
+	
 	3.	FTP (File Transfer Protocol)
 	•	Port: 21 (control), 20 (data)
 	•	Alternate Ports: 989 (data), 990 (control) for FTPS
 	•	Description: Used for transferring files between client and server.
+	
 	4.	SFTP (SSH File Transfer Protocol)
 	•	Port: 22
 	•	Alternate Ports: N/A
 	•	Description: Secure file transfer protocol over SSH.
+	
 	5.	SSH (Secure Shell)
 	•	Port: 22
 	•	Alternate Ports: N/A
 	•	Description: Secure protocol for remote command-line login and other secure network services.
+	
 	6.	Telnet
 	•	Port: 23
 	•	Alternate Ports: N/A
 	•	Description: Unsecure protocol for remote command-line login.
+	
 	7.	SMTP (Simple Mail Transfer Protocol)
 	•	Port: 25
 	•	Alternate Ports: 587, 465 (for SMTPS)
 	•	Description: Protocol for sending email.
+	
 	8.	IMAP (Internet Message Access Protocol)
 	•	Port: 143
 	•	Alternate Ports: 993 (IMAPS)
 	•	Description: Protocol for retrieving and storing email on a mail server.
+	
 	9.	POP3 (Post Office Protocol 3)
 	•	Port: 110
 	•	Alternate Ports: 995 (POP3S)
 	•	Description: Protocol for retrieving email from a mail server.
+	
 	10.	DNS (Domain Name System)
 	•	Port: 53
 	•	Alternate Ports: N/A
 	•	Description: Resolves domain names to IP addresses.
+	
 	11.	DHCP (Dynamic Host Configuration Protocol)
 	•	Port: 67 (server), 68 (client)
 	•	Alternate Ports: N/A
 	•	Description: Assigns IP addresses to devices on a network.
+	
 	12.	TFTP (Trivial File Transfer Protocol)
 	•	Port: 69
 	•	Alternate Ports: N/A
 	•	Description: Simple file transfer protocol with no authentication.
+	
 	13.	HTTP/3 (HTTP over QUIC)
 	•	Port: 443
 	•	Alternate Ports: N/A
 	•	Description: Next-generation HTTP using QUIC transport protocol for faster performance.
+	
 	14.	RDP (Remote Desktop Protocol)
 	•	Port: 3389
 	•	Alternate Ports: N/A
 	•	Description: Used for remote desktop access to Windows machines.
+	
 	15.	LDAP (Lightweight Directory Access Protocol)
 	•	Port: 389
 	•	Alternate Ports: 636 (LDAPS)
 	•	Description: Protocol for accessing and maintaining distributed directory information services.
+	
 	16.	SNMP (Simple Network Management Protocol)
 	•	Port: 161 (queries), 162 (traps)
 	•	Alternate Ports: N/A
 	•	Description: Used for network management and monitoring.
+	
 	17.	NTP (Network Time Protocol)
 	•	Port: 123
 	•	Alternate Ports: N/A
 	•	Description: Synchronizes clocks of network devices.
+	
 	18.	Kerberos
 	•	Port: 88
 	•	Alternate Ports: N/A
 	•	Description: Network authentication protocol for secure user identity verification.
+	
 	19.	MySQL
 	•	Port: 3306
 	•	Alternate Ports: N/A
 	•	Description: Database management system used for storing and retrieving data.
+	
 	20.	PostgreSQL
 	•	Port: 5432
 	•	Alternate Ports: N/A
 	•	Description: Advanced open-source relational database system.
+	
 	21.	MSSQL
 	•	Port: 1433
 	•	Alternate Ports: N/A
 	•	Description: Microsoft SQL Server database system.
+	
 	22.	Syslog
 	•	Port: 514
-	•	Alternate Ports: N/A
+	•	Alternate Ports: Can be configured to use a different port.
 	•	Description: Standard protocol for logging system messages.
+	
 	23.	SMB (Server Message Block)
 	•	Port: 445
 	•	Alternate Ports: 137-139 (NetBIOS over TCP/IP)
 	•	Description: Protocol for sharing files, printers, and serial ports.
+	
 	24.	ICMP (Internet Control Message Protocol)
 	•	Port: N/A
 	•	Alternate Ports: N/A
 	•	Description: Used for diagnostic and error messages in IP networks.
+	
 	25.	IRC (Internet Relay Chat)
 	•	Port: 6660-6669, 6697 (IRC over TLS)
 	•	Alternate Ports: N/A
