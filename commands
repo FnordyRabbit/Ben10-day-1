@@ -33,9 +33,8 @@ sudo airodump-ng -w <filename> <wireless interface> --band abg --gpsd
 
 EXAMPLE: sudo airodump-ng -w BroadSurvey wlan1mon --band abg --gpsd
 
-!1st Window:
+!1st Window: targetted survey
 !Make sure you replace the channel number and bssid with your own
-!Replace hack1 with your file name like capture1 or something 
 sudo airodump-ng -w <filename> -c <channel> --bssid <mac of access point> <wireless interface>
 
 EXAMPLE sudo airodump-ng -w TargettedSurvey -c 6 --bssid 90:9A:4A:B8:F3:FB wlan1mon
