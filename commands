@@ -51,3 +51,4 @@ airmon-ng stop wlan0mon
 !Make sure you have rockyou in text format (unzip file on Kali)
 !Replace hack1-01.cap with your file name
 aircrack-ng hack1-01.cap -w /usr/share/wordlists/rockyou.txt 
+
