@@ -39,6 +39,8 @@ sudo airodump-ng -w <filename> -c <channel> --bssid <mac of access point> <wirel
 
 EXAMPLE sudo airodump-ng -w TargettedSurvey -c 6 --bssid 90:9A:4A:B8:F3:FB wlan1mon
 
+!!!!!ACTIVE BEYOND THIS!!!!!
+
 !2nd Window - deauth attack
 !Make sure you replace the bssid with your own
 sudo aireplay-ng --deauth 1 -a 90:9A:4A:B8:F3:FB wlan0mon
