@@ -1,0 +1,10 @@
+Signal hunting in Wireshark has a simple workflow to follow that allows for easy identification 
+and tracking of target devices. First, we put a Wi-Fi network adapter into monitor mode and begin
+scanning for targets with airodump-ng to locate the channel our target is on. Once we know the channel 
+our target is broadcasting, 
+we can scan only on that channel to get the maximum number of packets for plotting in Wireshark.
+
+After locking onto the correct channel, we can open Wireshark, identify a packet from the device we 
+want to track, and then create a display filter to only show transmissions from that Wi-Fi device. 
+Finally, we use Wireshark's I/O graph to plot the signal strength over time as we move the directional 
+antenna around the room, looking for spikes in signal strength.
