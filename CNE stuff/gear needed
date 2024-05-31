@@ -1,1 +1,46 @@
+HARDWARE:
+=============================
 
+laptop with a linux os (prefferable Kali, I hate Ubuntu)
+
+wifi adapter (preferably two and must be 5g/2.4g compatible)
+
+a type c to usb adapter
+
+a usb hub
+
+gps puck
+
+the car charger thingy
+
+a charger for the laptop (duh)
+
+Power Bank (not needed but can save your ass when you dont have a power source)
+
+Yagi antenna ( this is preffered since it can capture from hella far but another dirrectional can substitute just not as well )
+
+===========================================
+
+
+SOFTWARE:
+===========================================
+
+macchanger
+
+airsuite (also known as aircrack-ng) tool set
+
+rockyou.txt (a dictionary to crack with)
+
+nmap
+
+netcat
+
+zenmap (quality of life)
+
+wifite (quality of life)
+
+wireshark
+
+========================================
+
+with love -Q
