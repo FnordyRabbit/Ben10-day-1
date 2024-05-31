@@ -8,3 +8,130 @@ After locking onto the correct channel, we can open Wireshark, identify a packet
 want to track, and then create a display filter to only show transmissions from that Wi-Fi device. 
 Finally, we use Wireshark's I/O graph to plot the signal strength over time as we move the directional 
 antenna around the room, looking for spikes in signal strength.
+
+
+
+Step 1
+Put Your Card into Monitor Mode
+To get started, plug in your wireless network adapter to your Kali or Debian-based system, then identify its name by running the command ifconfig 
+in a fresh terminal window. You should see your card named something like "wlan1," but if it doesn't automatically appear, run ip a to see if it's attached but not yet up.
+
+If you see your card with ip a but not ifconfig, run ifconfig wlan1 up to bring your card up. Now, it should be visible while running ifconfig.
+
+Now, to put your card into monitor mode, run the following command, assuming your wireless network adapter name is "wlan1" and it's up.
+
+~# airmon-ng start wlan1
+
+Found 3 processes that could cause trouble.
+Kill them using 'airmon-ng check kill' before putting
+the card in monitor mode, they will interfere by changing channels
+and sometimes putting the interface back in managed mode
+
+  PID Name
+  538 NetworkManager
+  608 wpa_supplicant
+ 2446 dhclient
+
+PHY Interface   Driver      Chipset
+
+phy0    wlan0       ath9k       Qualcomm Atheros QCA9565 / AR9565 Wireless Network Adapter (rev 01)
+phy4    wlan1       rt2800usb   Ralink Technology, Corp. RT5372
+
+        (mac80211 monitor mode vif enabled for [phy4]wlan1 on [phy4]wlan1mon)
+        (mac80211 station mode vif disabled for [phy4]wlan1)
+Now, your card should be named "wlan1mon" after being placed in monitor mode. With the wireless network adapter in monitor mode,
+we can start listening in on Wi-Fi traffic by running the following command.
+
+~# airodump-ng wlan1mon
+
+Step 2
+Identify the Target & Broadcasting Channel
+With the wireless network adapter in monitor mode, we can start listening in on Wi-Fi traffic by running the following command.
+
+~# airodump-ng wlan1mon
+We should then see a list of nearby Wi-Fi networks we can target.
+
+CH 10 ][ Elapsed: 0 s ][ 2019-08-04 03:33
+
+ BSSID              PWR  Beacons    #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID
+
+ CC:40:D0:6C:73:D1  -40        2        0    0   8  195  WPA2 CCMP   PSK  SuicideGirls
+ C0:8A:DE:B9:CD:D8  -50        2        0    0   1  130  OPN              SpectrumWiFi
+ C0:8A:DE:79:CD:D8  -50        2        0    0   1  130  WPA2 CCMP   MGT  SpectrumWiFi Plus
+ C0:8A:DE:39:CD:D8  -49        2        0    0   1  130  OPN              CableWiFi
+ 00:9C:02:D2:5E:B9  -65        2        0    0   1  54e. WPA2 CCMP   PSK  HP-Print-B9-Officejet Pro 8600
+ 88:96:4E:50:FF:40  -45        3        0    0   1  195  WPA2 CCMP   PSK  ATTMfRfcmS
+ 78:96:84:00:B5:B0  -48        2        0    0   1  130  WPA2 CCMP   PSK  The Daily Planet
+
+ BSSID              STATION            PWR   Rate    Lost    Frames  Probe
+
+ C0:8A:DE:79:CD:D8  4A:F3:2A:2A:4E:E6  -68    0 - 1      0        2
+Press Control-C to stop the capture when you've found what you're looking for. Now, we need to determine the channel the network
+we want to track is on. Here, we've got several networks available, and we're going to follow the one with the SSID of "ATTMfRfcmS."
+
+If you want to get a rough idea of where the network has been seen before, you can type the BSSID into Wigle.net and look for any 
+previous observations. Here, we can see that our target was observed twice.
+
+
+The most important part of the information we get from running airodump-ng is the channel number that our target is transmitting on. 
+Now that we know that it's broadcasting on channel 1, we'll restart our airodump-ng command to only scan on that channel.
+
+Step 3
+Listen on the Channel & Start Wireshark
+In our terminal window, we'll start airodump-ng again, but this time, we'll include the -c flag followed by the channel that our 
+target is on. For channel 1, it should look like the following.
+
+~# airodump-ng wlan1mon -c 1
+It's vital because Wireshark can't control the wireless card by itself, so we need to run airodump-ng to keep it on the correct channel
+and avoid losing packets while scanning on the wrong channel.
+
+As airodump-ng runs on channel 1, it's time to start Wireshark. After Wireshark opens, select the "wlan1mon" card you have in monitor
+mode as your capture source, then click the blue shark fin icon on the top left to begin capturing packets on channel 1.
+
+
+You should now see lots of packets being intercepted by Wireshark! Our next task is to identify a packet from our target and use it to create a display filter.
+
+Step 4
+Identify & Filter the Target
+Now that we've got some packets to search through, we can quickly look for beacon frames that contain the name of the network we're
+looking for. After clicking on the beacon frame, click on the arrow next to "IEEE 802.11" and look for the "Transmitter address" or 
+"Source address" field. That's what we'll use to build our capture filter to show only the device we're hunting for.
+
+
+Right-click on the "Transmitter address" to show a list of options, select "Apply as filter," and then "Selected" to create a display filter 
+that only shows packets transmitted from this device's BSSID. It should show all Wi-Fi transmissions from our network of interest and nothing from unrelated networks.
+
+
+You should notice a new filter in the filter bar that looks like "wlan.ta ==" and the BSSID of the target Wi-Fi device. The capture filter 
+simply says, "show only packets with a transmitter address that matches this one."
+
+The result is that we've isolated one Wi-Fi device, first by finding the channel it's on, and then by creating a filter to only show transmissions
+from the device we want to track. Now that we've isolated the signal we're following, it's time to start visualizing signal strength.
+
+Don't Miss: Control Anything with a Wi-Fi Relay Switch Using aRest
+
+Step 5
+Graph the Filtered Signal Strength
+To start graphing signal strength, copy the display filter created, click on "Statistics," then "I/O Graph" to launch Wireshark's graphing window.
+Click the plus (+) icon to create a new graph, and uncheck any other graphs that may be enabled.
+
+Name your graph something you'll remember, and then, paste your display filter into the Display Filter field. Next, paste wlan_radio.signal_dbm into
+the Y Field box, and select "AVG(Y Field)" as the Y Axis. Finally, set the Style to "Line," then the SMA Period to "10 Interval SMA."
+
+Once you've finished, your settings should look like below, and your signal strength graph should begin.
+
+
+That graph is showing us the average signal strength of packets from our targeted device over time. Without moving the directional antenna of your adapter,
+let this average out for a minute to get a baseline reading. The signal may seem to vary wildly at first because Wireshark is graphing a small change in signal,
+but the graph will make more sense as we sweep around the room and encounter stronger and weaker signals that will stretch out the averages of the graph.
+
+Step 6
+Sweep the Area for Signal Spikes
+Now, it's time for the moment of truth. Slowly rotate your directional antenna 360 degrees, watching for spikes in signal strength that reveal the direction from which the transmissions are coming from.
+
+In our graph below, I slowly rotated a panel antenna from one side to the other and saw a huge spike when the antenna was pointed directly at the signal source.
+
+
+After sweeping back and forth a few times, you should be able to identify a spike in the signal. Walk towards the direction of the peak, and repeat a sweep for
+the signal to narrow down the location of any transmitting Wi-Fi device systematically.
+
