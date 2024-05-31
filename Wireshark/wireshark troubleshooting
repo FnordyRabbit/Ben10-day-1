@@ -1,0 +1,11 @@
+1
+
+If by "open" you mean "no wireless encryption (no WPA2, WPA, or WEP)", and if your card really was in monitor mode, and tuned to the same channel as a nearby AP, and if the other device was associated to that nearby AP 
+(the one on the channel that your monitor mode device was tuned to), then there are still a handful of possible reasons you couldn't see the unicast HTTP traffic the other device was sending:
+
+You might have been in monitor mode, but not promiscuous mode. Some Wi-Fi cards differentiate. Monitor mode means you see 802.11-specific details, but promiscuous mode means you see unicast traffic that wasn't meant for you.
+Your target client and the AP may both have supported fancier modulation schemes than your monitor mode device supported, so your monitor mode device couldn't detect/decode their traffic. For example, if your target client
+and the AP both supported 2x2 MIMO, but your capture device was just 1x1 ("SISO", non-MIMO), your capture device wouldn't be able to see anything transmitted using 2 MIMO spatial streams.
+Your monitor mode capture device might not have been in a good location to successfully receive packets sent between your AP and target client. Have you ever been at one end of a long table in a noisy restaurant and been 
+unable to hear the conversation at the other end? Kinda like that. Your AP and target client may have had enough signal strength to each other to use faster modulation schemes, but your monitor mode client wasn't in a plac
+e where it could receive either device's transmissions clearly enough to decode difficult modulations reliably.
